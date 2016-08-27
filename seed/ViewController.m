@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+#import "AFHTTPSessionManager.h"
+#import "AFURLRequestSerialization.h"
+
 @interface ViewController ()
 
 @end
@@ -42,6 +45,43 @@
 - (void) getNearbyCircles {
     // TODO: Get nearby circles from web API
     self.nearbyCircles = @[];
+    
+    NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/circles?lat=%@&lng=%@", @"37.774095", @"-122.416830"];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:URLString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        
+        if ([responseObject valueForKey:@"in_circle"] == 0) {
+            // TODO: responseObject[@"circles"] => self.nearbyCircles
+            
+            NSInteger numCircles = [[responseObject valueForKey:@"circles"] count];
+            
+            //NSLog(@"Not in circle, so parsing nearby %ld circles..", (long)numCircles);
+            
+            for (NSInteger i = 0; i < numCircles; i++) {
+                //NSArray *keys = @[@"id", @"point", @"radius", @"name", @"city"];
+                // TODO: do stuff, maybe
+            }
+        } else {
+            // TODO: you're in a circle, so load individual circle view.
+        }
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    /*
+     // Don't know how much of this code from AFNetworking 2.x is required.
+     
+    manager.securityPolicy.allowInvalidCertificates = YES;
+    
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:authToken password:@"something"];
+    
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
+     */
+    
 }
 
 - (void) setUpFences {
