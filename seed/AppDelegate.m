@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if ([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]) {
+        NSLog(@"Location key present.");
+    }
+    
     return YES;
 }
 

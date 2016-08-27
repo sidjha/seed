@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@import CoreLocation;
+@import MapKit;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) MKMapView *mapView;
+@property (nonatomic, strong) NSArray *nearbyCircles;
 
 
 @end

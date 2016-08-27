@@ -496,6 +496,7 @@
 				EB16A9A81D58240600E96404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB16A9A91D58240600E96404 /* Build configuration list for PBXNativeTarget "seedTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +505,7 @@
 				EB16A9AB1D58240600E96404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB16A9AC1D58240600E96404 /* Build configuration list for PBXNativeTarget "seedUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +514,7 @@
 				EB16A9AE1D58240600E96404 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
