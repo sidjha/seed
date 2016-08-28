@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Configure location manager
+    [self startStandardLocationUpdates];
+    
     // Configure map
     self.mapView = [[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
@@ -27,21 +30,37 @@
     [self.mapView setDelegate:self];
     [self.view addSubview:self.mapView];
     
-    // Configure location manager
-    self.locationManager = [CLLocationManager new];
-    [self.locationManager setDelegate:self];
-    [self.locationManager setDistanceFilter:kCLDistanceFilterNone];
-    
-    [self getNearbyCircles];
-    
-    [self askForPermission];
-    
-    
     // Observe changes to user's location on map
     [self.mapView.userLocation addObserver:self forKeyPath:@"location"
                                options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
                                context:NULL];
     
+    //[self getNearbyCircles];
+    
+}
+
+- (void) startStandardLocationUpdates {
+    // Create the location manager if it doesn't exist
+    
+    if (self.locationManager == nil) {
+        self.locationManager = [[CLLocationManager alloc] init];
+    }
+    
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    self.locationManager.distanceFilter = 5;
+    
+    CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
+    
+    if (authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
+        authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        
+        [self.locationManager startUpdatingLocation];
+        self.mapView.showsUserLocation = YES;
+    } else {
+        //[self showNoLocationAccessDialog];
+        [self askForPermission];
+    }
 }
 
 // Pan and zoom map based on current location:
@@ -66,11 +85,32 @@
     [self.locationManager requestAlwaysAuthorization];
 }
 
+- (void) showNoLocationAccessDialog {
+    UIAlertController *noLocationAlert = [UIAlertController alertControllerWithTitle:@"App needs location access" message:@"We do not have permission to access your location. Please turn this ON to use the app." preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *askPermissionAction = [UIAlertAction actionWithTitle:@"Give Permission" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self askForPermission];
+    }];
+    
+    UIAlertAction *quitAction = [UIAlertAction actionWithTitle:@"Quit" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        // TODO: show error message view controller.
+    }];
+    
+    [noLocationAlert addAction:askPermissionAction];
+    [noLocationAlert addAction:quitAction];
+    
+    [self presentViewController:noLocationAlert animated:YES completion:nil];
+}
+
+
 - (void) getNearbyCircles {
     
     self.nearbyCircles = @[];
     
-    NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/circles?lat=%@&lng=%@", @"37.774095", @"-122.416830"];
+    NSString *lat = [[NSNumber numberWithDouble:self.locationManager.location.coordinate.latitude] stringValue];
+    NSString *lng = [[NSNumber numberWithDouble:self.locationManager.location.coordinate.longitude] stringValue];
+    
+    NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/circles?lat=%@&lng=%@", lat, lng];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
@@ -82,9 +122,12 @@
         if ([[responseObject objectForKey:@"in_circle"]boolValue] == NO) {
             NSLog(@"Not in circle, here's some nearby ones..");
             
-            self.nearbyCircles = [responseObject objectForKey:@"circles"];
-            
-            [self setUpFences];
+            if ([[responseObject objectForKey:@"circles"] count] == 0) {
+                NSLog(@"Sorry, no nearby circles.");
+            } else {
+                self.nearbyCircles = [responseObject objectForKey:@"circles"];
+                [self setUpFences];
+            }
             
         } else {
             // TODO: change to in-circle view
@@ -135,6 +178,38 @@
 
 #pragma mark - CLLocationManagerDelegate methods
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    NSLog(@"Changed authorization status: %d", status);
+    
+    // Update location once location access is granted
+    if (status == kCLAuthorizationStatusAuthorizedAlways ||
+        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self.locationManager startUpdatingLocation];
+        self.mapView.showsUserLocation = YES;
+    }
+    
+    // Show dialog about location if status is changed, and it's
+    // not "Authorized Always".
+    // But don't show dialog if status hasn't been determined yet
+    if (status != kCLAuthorizationStatusAuthorizedAlways && status != kCLAuthorizationStatusNotDetermined) {
+        [self showNoLocationAccessDialog];
+    }
+
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    CLLocation* location = [locations lastObject];
+    NSDate* eventDate = location.timestamp;
+    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+    if (abs(howRecent) < 15.0) {
+        // If the event is recent, do something with it.
+        NSLog(@"latitude %+.6f, longitude %+.6f\n",
+              location.coordinate.latitude,
+              location.coordinate.longitude);
+    }
+}
+
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
     NSLog(@"Monitoring started for region: %@", region.description);
 }
@@ -157,15 +232,6 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"Location manager failed. Error: %@", error.description);
-}
-
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    NSLog(@"Changed authorization status: %d", status);
-    
-    if (status == kCLAuthorizationStatusAuthorizedAlways) {
-        [self.mapView setShowsUserLocation:YES];
-        [self setUpFences];
-    }
 }
 
 #pragma mark - MKMapViewDelegate methods

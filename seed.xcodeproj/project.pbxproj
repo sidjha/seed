@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B37E398F3CFDD9384DAE7C4 /* libPods-seed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */; };
+		EB102DFB1D72A0BD003E7BAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */; };
+		EB102DFD1D72A285003E7BAF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB102DFC1D72A285003E7BAF /* MapKit.framework */; };
 		EB16A97E1D58240600E96404 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A97D1D58240600E96404 /* main.m */; };
 		EB16A9811D58240600E96404 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9801D58240600E96404 /* AppDelegate.m */; };
 		EB16A9841D58240600E96404 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9831D58240600E96404 /* ViewController.m */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		36A057159C0DFCFD08CD79BD /* Pods-seed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seed/Pods-seed.debug.xcconfig"; sourceTree = "<group>"; };
 		C396ED0C8BF752ED373FC639 /* Pods-seed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed.release.xcconfig"; path = "Pods/Target Support Files/Pods-seed/Pods-seed.release.xcconfig"; sourceTree = "<group>"; };
+		EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		EB102DFC1D72A285003E7BAF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EB16A9791D58240600E96404 /* seed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB16A97D1D58240600E96404 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB16A97F1D58240600E96404 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB102DFB1D72A0BD003E7BAF /* CoreLocation.framework in Frameworks */,
+				EB102DFD1D72A285003E7BAF /* MapKit.framework in Frameworks */,
 				5B37E398F3CFDD9384DAE7C4 /* libPods-seed.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +92,8 @@
 		1C2E5800467EA0A927490279 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB102DFC1D72A285003E7BAF /* MapKit.framework */,
+				EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */,
 				F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */,
 			);
 			name = Frameworks;
@@ -234,6 +242,11 @@
 				TargetAttributes = {
 					EB16A9781D58240600E96404 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					EB16A9911D58240600E96404 = {
 						CreatedOnToolsVersion = 7.3;
