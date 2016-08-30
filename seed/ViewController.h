@@ -15,6 +15,8 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) MKMapView *mapView;
 @property (nonatomic, strong) NSArray *nearbyCircles;
+@property (nonatomic, strong) NSMutableArray *monitoredRegions;
+@property (nonatomic, strong) CLLocation *currentLocation;
 
 
 @end

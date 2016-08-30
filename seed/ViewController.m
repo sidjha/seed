@@ -35,20 +35,21 @@
                                options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
                                context:NULL];
     
-    //[self getNearbyCircles];
+    
+    // Search for new circles every 30 seconds.
+    [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(triggerNewCircleSearch:) userInfo:nil repeats:YES];
     
 }
 
 - (void) startStandardLocationUpdates {
     // Create the location manager if it doesn't exist
-    
     if (self.locationManager == nil) {
         self.locationManager = [[CLLocationManager alloc] init];
     }
     
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-    self.locationManager.distanceFilter = 5;
+    self.locationManager.distanceFilter = 20;
     
     CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
     
@@ -58,9 +59,15 @@
         [self.locationManager startUpdatingLocation];
         self.mapView.showsUserLocation = YES;
     } else {
-        //[self showNoLocationAccessDialog];
         [self askForPermission];
     }
+
+}
+
+- (void) triggerNewCircleSearch:(NSTimer *)timer {
+    // TODO: some logic to ensure we are searching only if
+    // location has changed by at least 20m.
+    [self getNearbyCircles];
 }
 
 // Pan and zoom map based on current location:
@@ -76,7 +83,7 @@
 - (void) panAndZoomMap {
     CLLocationCoordinate2D curLocation = CLLocationCoordinate2DMake(self.mapView.userLocation.coordinate.latitude, self.mapView.userLocation.coordinate.longitude);
     
-    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(curLocation, 400, 400);
+    MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(curLocation, 800, 800);
     
     [self.mapView setRegion:zoomRegion animated:YES];
 }
@@ -151,29 +158,65 @@
 }
 
 - (void) setUpFences {
-    NSLog(@"Setting up %lu fences..", (unsigned long)[self.nearbyCircles count]);
     
-    // for each nearby circle, set up fence, annotation and overlay
-    for(NSInteger i = 0; i < [self.nearbyCircles count]; i++) {
+    NSLog(@"Setting up %lu (possibly) new fences..", (unsigned long)[self.nearbyCircles count]);
+    
+    NSMutableArray *indicesToKeep = [NSMutableArray array];
+    NSMutableArray *regionsTemp = [NSMutableArray array];
+    
+    // for each nearby circle, set up geofence, annotation and overlay
+    for (NSInteger i = 0; i < [self.nearbyCircles count]; i++) {
+        
+        NSString *circle_id = [[self.nearbyCircles objectAtIndex:i][@"id"] stringValue];
         
         CLLocationDegrees lat = [[self.nearbyCircles objectAtIndex:i][@"center_lat"] floatValue];
         CLLocationDegrees lng = [[self.nearbyCircles objectAtIndex:i][@"center_lng"] floatValue];
         CLLocationCoordinate2D center = CLLocationCoordinate2DMake(lat, lng);
         
         NSInteger radius = [[self.nearbyCircles objectAtIndex:i][@"radius"] intValue];
-        NSString *name = [self.nearbyCircles objectAtIndex:i][@"name"];
         
-        CLRegion *region = [[CLCircularRegion alloc] initWithCenter:center radius:radius identifier:name];
+        CLRegion *region = [[CLCircularRegion alloc] initWithCenter:center radius:radius identifier:circle_id];
         
-        MKPointAnnotation *pointAnnotation = [[MKPointAnnotation alloc] init];
-        [pointAnnotation setCoordinate:center];
-        [self.mapView addAnnotation:pointAnnotation];
+        BOOL circle_exists = NO;
         
-        MKCircle *circle = [MKCircle circleWithCenterCoordinate:center radius:radius];
-        [self.mapView addOverlay:circle];
+        // flag existing regions that are still nearby
+        for(NSInteger j = 0; j < [self.monitoredRegions count]; j++) {
+            if ([circle_id isEqualToString:[[self.monitoredRegions objectAtIndex:j] identifier]]) {
+                circle_exists = YES;
+                [indicesToKeep addObject:[NSNumber numberWithInteger:j]];
+            }
+        }
         
-        [self.locationManager startMonitoringForRegion:region];
+        // only add a new nearby region/circle/geofence, skip the existing ones
+        if (circle_exists == NO) {
+            [regionsTemp addObject:region];
+            
+            MKPointAnnotation *pointAnnotation = [[MKPointAnnotation alloc] init];
+            [pointAnnotation setCoordinate:center];
+            [self.mapView addAnnotation:pointAnnotation];
+            
+            MKCircle *circle = [MKCircle circleWithCenterCoordinate:center radius:radius];
+            [self.mapView addOverlay:circle];
+            
+            [self.locationManager startMonitoringForRegion:region];
+        }
     }
+    
+    // Delete old geofences
+    NSLog(@"Deleting any old fences..");
+    
+    // Clean up monitoredRegions, removing regions that aren't nearby anymore
+    for (NSInteger i = 0; i < [indicesToKeep count]; i++) {
+        int tokeep = (int)[indicesToKeep objectAtIndex:i];
+        [self.locationManager stopMonitoringForRegion:[self.monitoredRegions objectAtIndex:tokeep]];
+        [self.monitoredRegions removeObjectAtIndex:tokeep];
+    }
+    
+    // Keep monitoredRegions array updated with newly added regions
+    for (NSInteger i = 0; i < [regionsTemp count]; i++) {
+        [self.monitoredRegions addObject:[regionsTemp objectAtIndex:i]];
+    }
+    
 }
 
 #pragma mark - CLLocationManagerDelegate methods
@@ -198,16 +241,27 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+
+    /*
+    CLLocation *newLocation = locations.lastObject;
     
-    CLLocation* location = [locations lastObject];
-    NSDate* eventDate = location.timestamp;
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 15.0) {
-        // If the event is recent, do something with it.
-        NSLog(@"latitude %+.6f, longitude %+.6f\n",
-              location.coordinate.latitude,
-              location.coordinate.longitude);
+    NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];
+    if (locationAge > 5.0) return;
+    
+    if (newLocation.horizontalAccuracy < 0) return;
+    
+    if (self.currentLocation == nil) {
+        [self getNearbyCircles];
     }
+    // Needed to filter cached and too old locations
+    //NSLog(@"Location updated to = %@", newLocation);
+    CLLocation *loc1 = [[CLLocation alloc] initWithLatitude:self.currentLocation.coordinate.latitude longitude:self.currentLocation.coordinate.longitude];
+    CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude];
+    double distance = [loc1 distanceFromLocation:loc2];
+    
+    self.currentLocation = newLocation;
+    NSLog(@"Location has changed: %f", distance);
+     */
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
