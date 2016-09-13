@@ -138,16 +138,8 @@
             }
 
         } else {
-            // TODO: proper way to push subview
-            UIView *circleView = [[UIView alloc] init];
-            [circleView setFrame:[[UIScreen mainScreen] bounds]];
-
-            UILabel *circleLabel = [[UILabel alloc] init];
-            circleLabel.text = [NSString stringWithFormat:@"Welcome to circle"];
-            circleLabel.textColor = [UIColor blackColor];
-
-            [circleView addSubview:circleLabel];
-            [self.view addSubview:circleView];
+            UIViewController *circleVC = [[UIViewController alloc] init];
+            [self presentViewController:circleVC animated:YES completion:nil];
         }
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);

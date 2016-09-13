@@ -18,6 +18,9 @@
 		EB16A98C1D58240600E96404 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB16A98A1D58240600E96404 /* LaunchScreen.storyboard */; };
 		EB16A9971D58240600E96404 /* seedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9961D58240600E96404 /* seedTests.m */; };
 		EB16A9A21D58240600E96404 /* seedUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9A11D58240600E96404 /* seedUITests.m */; };
+		EB3EEB2E1D87974E007C7EE3 /* SeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3EEB2D1D87974E007C7EE3 /* SeedsTableViewController.m */; };
+		EB3EEB311D87B70C007C7EE3 /* SeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3EEB301D87B70C007C7EE3 /* SeedTableViewCell.m */; };
+		EB425A4B1D7D207B00BA54E0 /* SeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB425A4A1D7D207B00BA54E0 /* SeedsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,12 @@
 		EB16A99D1D58240600E96404 /* seedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB16A9A11D58240600E96404 /* seedUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = seedUITests.m; sourceTree = "<group>"; };
 		EB16A9A31D58240600E96404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB3EEB2C1D87974E007C7EE3 /* SeedsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedsTableViewController.h; sourceTree = "<group>"; };
+		EB3EEB2D1D87974E007C7EE3 /* SeedsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedsTableViewController.m; sourceTree = "<group>"; };
+		EB3EEB2F1D87B70C007C7EE3 /* SeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeedTableViewCell.h; path = ../SeedTableViewCell.h; sourceTree = "<group>"; };
+		EB3EEB301D87B70C007C7EE3 /* SeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeedTableViewCell.m; path = ../SeedTableViewCell.m; sourceTree = "<group>"; };
+		EB425A491D7D207B00BA54E0 /* SeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedsViewController.h; sourceTree = "<group>"; };
+		EB425A4A1D7D207B00BA54E0 /* SeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedsViewController.m; sourceTree = "<group>"; };
 		F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,7 +146,13 @@
 				EB16A9801D58240600E96404 /* AppDelegate.m */,
 				EB16A9821D58240600E96404 /* ViewController.h */,
 				EB16A9831D58240600E96404 /* ViewController.m */,
+				EB425A491D7D207B00BA54E0 /* SeedsViewController.h */,
+				EB425A4A1D7D207B00BA54E0 /* SeedsViewController.m */,
 				EB16A9851D58240600E96404 /* Main.storyboard */,
+				EB3EEB2C1D87974E007C7EE3 /* SeedsTableViewController.h */,
+				EB3EEB2D1D87974E007C7EE3 /* SeedsTableViewController.m */,
+				EB3EEB2F1D87B70C007C7EE3 /* SeedTableViewCell.h */,
+				EB3EEB301D87B70C007C7EE3 /* SeedTableViewCell.m */,
 				EB16A9881D58240600E96404 /* Assets.xcassets */,
 				EB16A98A1D58240600E96404 /* LaunchScreen.storyboard */,
 				EB16A98D1D58240600E96404 /* Info.plist */,
@@ -360,7 +375,10 @@
 			files = (
 				EB16A9841D58240600E96404 /* ViewController.m in Sources */,
 				EB16A9811D58240600E96404 /* AppDelegate.m in Sources */,
+				EB3EEB311D87B70C007C7EE3 /* SeedTableViewCell.m in Sources */,
 				EB16A97E1D58240600E96404 /* main.m in Sources */,
+				EB425A4B1D7D207B00BA54E0 /* SeedsViewController.m in Sources */,
+				EB3EEB2E1D87974E007C7EE3 /* SeedsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
