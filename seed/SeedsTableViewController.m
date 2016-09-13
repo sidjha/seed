@@ -34,6 +34,9 @@
     NSMutableDictionary *d2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"@bunny", @"seeder_id", @"8h ago", @"timestamp", @"Any tennis players?", @"title", @"http://nytimes.com", @"link", nil];
 
     self.seeds = [[NSMutableArray alloc] initWithArray:@[d1, d2]];
+
+    // Search for new seeds every 30 seconds.
+    [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(triggerNewSeedsSearch:) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +60,7 @@
         authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
 
         [self.locationManager startUpdatingLocation];
-        //[self getNearbyContent];
+        [self getNearbyContent];
     } else {
         [self askForPermission];
     }
@@ -79,6 +82,7 @@
         NSLog(@"Response: %@", responseObject);
 
         self.seeds = [responseObject objectForKey:@"seeds"];
+        [self.tableView reloadData];
 
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -107,6 +111,11 @@
     [self presentViewController:noLocationAlert animated:YES completion:nil];
 }
 
+- (void) triggerNewSeedsSearch:(NSTimer *)timer {
+    // TODO: some logic to ensure we are searching only if
+    // location has changed by at least 20m.
+    [self getNearbyContent];
+}
 
 
 #pragma mark - Table view data source
@@ -123,7 +132,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"seedCell" forIndexPath:indexPath];
 
-    cell.seederLabel.text = [self.seeds objectAtIndex:indexPath.row][@"seeder_id"];
+    cell.seederLabel.text = [self.seeds objectAtIndex:indexPath.row][@"seeder_name"];
     cell.timestampLabel.text = [self.seeds objectAtIndex:indexPath.row][@"timestamp"];
     cell.captionLabel.text = [self.seeds objectAtIndex:indexPath.row][@"title"];
     cell.linkLabel.text = [self.seeds objectAtIndex:indexPath.row][@"link"];
