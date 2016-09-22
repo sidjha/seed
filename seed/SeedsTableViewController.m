@@ -10,6 +10,7 @@
 #import "AFHTTPSessionManager.h"
 #import "AFURLRequestSerialization.h"
 #import "SeedTableViewCell.h"
+#import "SeedWebViewController.h"
 
 @interface SeedsTableViewController ()
 
@@ -34,6 +35,8 @@
     NSMutableDictionary *d2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"@bunny", @"seeder_id", @"8h ago", @"timestamp", @"Any tennis players?", @"title", @"http://nytimes.com", @"link", nil];
 
     self.seeds = [[NSMutableArray alloc] initWithArray:@[d1, d2]];
+
+    self.seedsTableView = self.tableView;
 
     // Search for new seeds every 30 seconds.
     [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(triggerNewSeedsSearch:) userInfo:nil repeats:YES];
@@ -228,16 +231,23 @@
 }
 
 
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
+    if ([segue.identifier isEqualToString:@"openSeedSegue"]) {
+        NSIndexPath *indexPath = [self.seedsTableView indexPathForCell:sender];
+
+        SeedWebViewController *webViewController = (SeedWebViewController *) segue.destinationViewController;
+
+        webViewController.urlToLoad = [NSURL URLWithString:[self.seeds objectAtIndex:indexPath.row][@"link"]];
+
+       // webViewController.delegate = self;
+    }
 }
-*/
 
 
 

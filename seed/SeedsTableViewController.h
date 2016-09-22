@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) NSMutableArray *seeds;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) UITableView *seedsTableView;
 
 @end

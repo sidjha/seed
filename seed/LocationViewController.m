@@ -6,7 +6,7 @@
 //  Copyright © 2016 Mesh8. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LocationViewController.h"
 
 #import "AFHTTPSessionManager.h"
 #import "AFURLRequestSerialization.h"

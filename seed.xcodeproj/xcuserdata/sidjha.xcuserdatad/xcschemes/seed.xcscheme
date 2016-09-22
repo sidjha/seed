@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0800"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -84,8 +84,8 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "San Francisco, CA, USA"
-         referenceType = "1">
+         identifier = "../twitterhq.gpx"
+         referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
