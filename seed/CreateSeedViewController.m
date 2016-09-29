@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
+    [doneButton setTintColor:[UIColor blueColor]];
+
+    self.navigationItem.leftBarButtonItem = doneButton;
+    self.locationController = [LocationController sharedLocationController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,13 +35,16 @@
 - (IBAction)publishSeedTapped:(id)sender {
 
     [self postSeedToServer];
+}
 
+- (void) doneAction:(id) sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void) postSeedToServer {
 
-    NSString *lat = [[NSNumber numberWithDouble:self.locationController.location.coordinate.latitude] stringValue];
-    NSString *lng = [[NSNumber numberWithDouble:self.locationController.location.coordinate.longitude] stringValue];
+    NSNumber *lat = [NSNumber numberWithDouble:self.locationController.location.coordinate.latitude];
+    NSNumber *lng = [NSNumber numberWithDouble:self.locationController.location.coordinate.longitude];
 
     NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/seed/create"];
 
@@ -53,6 +62,8 @@
     [manager POST:URLString parameters:data progress:nil success:^(NSURLSessionTask *task, id responseObject) {
 
         NSLog(@"Data: %@", responseObject);
+
+        [self dismissViewControllerAnimated:YES completion:nil];
 
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
