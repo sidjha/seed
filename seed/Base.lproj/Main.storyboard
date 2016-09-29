@@ -7,98 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-388" y="252"/>
-        </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="Mqy-Qs-gic">
-            <objects>
-                <collectionViewController id="hiu-qK-bim" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BNB-6i-t1S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0UV-Gv-Esg">
-                            <size key="itemSize" width="332" height="427"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jzL-ch-wGa">
-                                <rect key="frame" x="21.5" y="0.0" width="332" height="427"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="332" height="427"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A simple title goes here. It could be long" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sW6-1J-3V8">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;seeder&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzr-Vv-jE9">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;timestamp&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6d-mT-kVx">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;LINK TYPE&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiv-A7-B3u">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;linkurldomain&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fev-f4-xlN">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="sW6-1J-3V8" firstAttribute="centerX" secondItem="jzL-ch-wGa" secondAttribute="centerX" id="Dw9-RS-BMZ"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="Jzr-Vv-jE9" secondAttribute="bottom" constant="30" id="EDz-Xu-vXO"/>
-                                    <constraint firstItem="Jzr-Vv-jE9" firstAttribute="leading" secondItem="jzL-ch-wGa" secondAttribute="leadingMargin" constant="15" id="EJy-az-Dw7"/>
-                                    <constraint firstItem="eiv-A7-B3u" firstAttribute="top" secondItem="jzL-ch-wGa" secondAttribute="topMargin" constant="10" id="Erk-Ah-Bpu"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="D6d-mT-kVx" secondAttribute="bottom" constant="30" id="Mbz-AX-xuT"/>
-                                    <constraint firstItem="fev-f4-xlN" firstAttribute="centerX" secondItem="jzL-ch-wGa" secondAttribute="centerX" id="TGQ-Rm-uKP"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="sW6-1J-3V8" secondAttribute="trailing" constant="40" id="W7h-Sf-KZK"/>
-                                    <constraint firstItem="sW6-1J-3V8" firstAttribute="leading" secondItem="jzL-ch-wGa" secondAttribute="leadingMargin" constant="40" id="WiB-yU-3VY"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="D6d-mT-kVx" secondAttribute="trailing" constant="15" id="XkO-7i-Vl4"/>
-                                    <constraint firstItem="sW6-1J-3V8" firstAttribute="top" secondItem="eiv-A7-B3u" secondAttribute="bottom" constant="120" id="ia8-kC-jKn"/>
-                                    <constraint firstItem="fev-f4-xlN" firstAttribute="top" secondItem="sW6-1J-3V8" secondAttribute="bottom" constant="20" id="t2R-qm-MZW"/>
-                                    <constraint firstItem="eiv-A7-B3u" firstAttribute="centerX" secondItem="jzL-ch-wGa" secondAttribute="centerX" id="zQ6-sA-giC"/>
-                                </constraints>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="hiu-qK-bim" id="VJZ-9W-72b"/>
-                            <outlet property="delegate" destination="hiu-qK-bim" id="6Bf-ei-yQX"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="74w-ME-1N6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="608.5" y="-502.5"/>
-        </scene>
         <!--Nearby Seeds-->
         <scene sceneID="oOB-NT-7Cb">
             <objects>
@@ -161,11 +69,72 @@
                             <outlet property="delegate" destination="Uvr-gg-5J6" id="mBT-p0-JW5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Nearby Seeds" id="rkr-OG-OyZ"/>
+                    <navigationItem key="navigationItem" title="Nearby Seeds" id="rkr-OG-OyZ">
+                        <barButtonItem key="rightBarButtonItem" title="Create" style="plain" id="Uae-Kn-xD5">
+                            <connections>
+                                <segue destination="jua-O5-nQ4" kind="presentation" id="V6i-GY-xV5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="createSeedButton" destination="Uae-Kn-xD5" id="Bon-k7-IhM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSy-YC-ebx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1145" y="253"/>
+        </scene>
+        <!--Create Seed View Controller-->
+        <scene sceneID="szU-j9-iEF">
+            <objects>
+                <viewController id="jua-O5-nQ4" customClass="CreateSeedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OlB-VT-lB0"/>
+                        <viewControllerLayoutGuide type="bottom" id="uHi-HS-TQC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7dL-DU-OD5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Actual link" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vq6-98-Ppr">
+                                <frame key="frameInset" minX="37" minY="234" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Some descriptive title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-L5-7za">
+                                <frame key="frameInset" minX="37" minY="98" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="next"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOr-re-OEX">
+                                <state key="normal" title="Publish Seed"/>
+                                <connections>
+                                    <action selector="publishSeedTapped:" destination="jua-O5-nQ4" eventType="touchUpInside" id="VYv-GG-ziz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vq6-98-Ppr" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="20" id="6fB-6r-jLC"/>
+                            <constraint firstItem="oOr-re-OEX" firstAttribute="centerX" secondItem="7dL-DU-OD5" secondAttribute="centerX" id="CRr-z5-73k"/>
+                            <constraint firstItem="xW4-L5-7za" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="20" id="Yt9-1V-eto"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xW4-L5-7za" secondAttribute="trailing" constant="40" id="eJ6-cF-Go7"/>
+                            <constraint firstItem="xW4-L5-7za" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="30" id="gs5-o4-qk1"/>
+                            <constraint firstItem="vq6-98-Ppr" firstAttribute="top" secondItem="xW4-L5-7za" secondAttribute="bottom" constant="20" id="kvC-l6-dUk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vq6-98-Ppr" secondAttribute="trailing" constant="40" id="qwa-IY-Foq"/>
+                            <constraint firstItem="uHi-HS-TQC" firstAttribute="top" secondItem="oOr-re-OEX" secondAttribute="bottom" constant="100" id="vw5-Ji-DRs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="seedLinkTextView" destination="vq6-98-Ppr" id="HuH-pB-79t"/>
+                        <outlet property="seedTitleTextView" destination="xW4-L5-7za" id="IHO-v1-wmn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gb9-IW-ng6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1973.5999999999999" y="-427.73613193403304"/>
         </scene>
         <!--Seed Web View Controller-->
         <scene sceneID="jYJ-Pn-B4f">

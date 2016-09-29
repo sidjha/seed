@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-@import CoreLocation;
+#import "LocationController.h"
 
-@interface SeedsTableViewController : UITableViewController <CLLocationManagerDelegate>
+@interface SeedsTableViewController : UITableViewController <LocationControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *seeds;
-@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) UITableView *seedsTableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *createSeedButton;
+@property (nonatomic, strong) LocationController *locationController;
+
 
 @end

@@ -10,7 +10,7 @@
 
 @interface SeedWebViewController : UIViewController <UIWebViewDelegate>
 
-@property (nonatomic, strong) IBOutlet UIWebView *seedWebView;
+@property (nonatomic, strong) UIWebView *seedWebView;
 @property (nonatomic, strong) NSURL *urlToLoad;
 
 @end

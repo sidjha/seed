@@ -11,6 +11,8 @@
 #import "AFURLRequestSerialization.h"
 #import "SeedTableViewCell.h"
 #import "SeedWebViewController.h"
+#import "CreateSeedViewController.h"
+#import "LocationController.h"
 
 @interface SeedsTableViewController ()
 
@@ -20,16 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    self.locationManager.delegate = self;
-
-    [self startStandardLocationUpdates];
+    self.locationController = [LocationController sharedLocationController];
+    // TODO: Do we need to do anything else w.r.t. LocationController initialization?
+    self.locationController.delegate = self;
 
     NSMutableDictionary *d1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"@sidjha", @"seeder_id", @"6h ago", @"timestamp", @"How to observe meteor shower tonight", @"title", @"http://nytimes.com", @"link", nil];
     NSMutableDictionary *d2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"@bunny", @"seeder_id", @"8h ago", @"timestamp", @"Any tennis players?", @"title", @"http://nytimes.com", @"link", nil];
@@ -47,33 +43,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) startStandardLocationUpdates {
-    // Create the location manager if it doesn't exist
-    if (self.locationManager == nil) {
-        self.locationManager = [[CLLocationManager alloc] init];
-    }
-
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-    self.locationManager.distanceFilter = 20;
-
-    CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
-
-    if (authorizationStatus == kCLAuthorizationStatusAuthorizedAlways ||
-        authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-
-        [self.locationManager startUpdatingLocation];
-        [self getNearbyContent];
-    } else {
-        [self askForPermission];
-    }
-    
-}
-
 - (void) getNearbyContent {
 
-    NSString *lat = [[NSNumber numberWithDouble:self.locationManager.location.coordinate.latitude] stringValue];
-    NSString *lng = [[NSNumber numberWithDouble:self.locationManager.location.coordinate.longitude] stringValue];
+    NSString *lat = [[NSNumber numberWithDouble:self.locationController.location.coordinate.latitude] stringValue];
+    NSString *lng = [[NSNumber numberWithDouble:self.locationController.location.coordinate.longitude] stringValue];
 
     NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/seeds?lat=%@&lng=%@", lat, lng];
 
@@ -93,33 +66,15 @@
     
 }
 
-- (void) askForPermission {
-    [self.locationManager requestAlwaysAuthorization];
-}
-
-- (void) showNoLocationAccessDialog {
-    UIAlertController *noLocationAlert = [UIAlertController alertControllerWithTitle:@"App needs location access" message:@"We do not have permission to access your location. Please turn this ON to use the app." preferredStyle:UIAlertControllerStyleAlert];
-
-    UIAlertAction *askPermissionAction = [UIAlertAction actionWithTitle:@"Give Permission" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-        [self askForPermission];
-    }];
-
-    UIAlertAction *quitAction = [UIAlertAction actionWithTitle:@"Quit" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        // TODO: show error message view controller.
-    }];
-
-    [noLocationAlert addAction:askPermissionAction];
-    [noLocationAlert addAction:quitAction];
-
-    [self presentViewController:noLocationAlert animated:YES completion:nil];
-}
-
 - (void) triggerNewSeedsSearch:(NSTimer *)timer {
-    // TODO: some logic to ensure we are searching only if
-    // location has changed by at least 20m.
     [self getNearbyContent];
 }
 
+#pragma mark - LocationController delegate methods
+- (void) locationUpdate:(CLLocation *) location {
+    // Load nearby content as soon as we get a new location fix
+    [self getNearbyContent];
+}
 
 #pragma mark - Table view data source
 
@@ -131,7 +86,6 @@
     return [self.seeds count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"seedCell" forIndexPath:indexPath];
 
@@ -142,7 +96,6 @@
 
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -185,52 +138,6 @@
  
 */
 
-
-#pragma mark - CLLocationManagerDelegate methods
-
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    NSLog(@"Changed authorization status: %d", status);
-
-    // Update location once location access is granted
-    if (status == kCLAuthorizationStatusAuthorizedAlways ||
-        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [self.locationManager startUpdatingLocation];
-    }
-
-    // Show dialog about location if status is changed, and it's
-    // not "Authorized Always".
-    // But don't show dialog if status hasn't been determined yet
-    if (status != kCLAuthorizationStatusAuthorizedAlways && status != kCLAuthorizationStatusNotDetermined) {
-        [self showNoLocationAccessDialog];
-    }
-
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-
-    /*
-     CLLocation *newLocation = locations.lastObject;
-
-     NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];
-     if (locationAge > 5.0) return;
-
-     if (newLocation.horizontalAccuracy < 0) return;
-
-     if (self.currentLocation == nil) {
-     [self getNearbyCircles];
-     }
-     // Needed to filter cached and too old locations
-     //NSLog(@"Location updated to = %@", newLocation);
-     CLLocation *loc1 = [[CLLocation alloc] initWithLatitude:self.currentLocation.coordinate.latitude longitude:self.currentLocation.coordinate.longitude];
-     CLLocation *loc2 = [[CLLocation alloc] initWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude];
-     double distance = [loc1 distanceFromLocation:loc2];
-
-     self.currentLocation = newLocation;
-     NSLog(@"Location has changed: %f", distance);
-     */
-}
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -248,7 +155,5 @@
        // webViewController.delegate = self;
     }
 }
-
-
 
 @end
