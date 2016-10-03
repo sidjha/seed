@@ -14,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qfu-MD-YqI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95515280961990356" green="0.89669603109359741" blue="0.82484370470046997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="seedCell" rowHeight="125" id="cTw-Zl-cT1" customClass="SeedTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="375" height="125"/>
@@ -23,18 +23,18 @@
                                     <frame key="frameInset" width="375" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9m ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiH-1j-E8z">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 MINUTES ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiH-1j-E8z">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.89725321531295776" green="0.24094855785369873" blue="0.19631752371788025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link caption link caption" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI5-5Y-xXv">
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual link" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EU0-lI-0nF">
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -44,6 +44,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="OiH-1j-E8z" secondAttribute="trailing" constant="15" id="6uv-VF-2qg"/>
                                         <constraint firstItem="Q9y-hi-OeS" firstAttribute="top" secondItem="Y9H-CC-agy" secondAttribute="topMargin" constant="10" id="K6F-vb-u8e"/>
@@ -70,7 +71,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Nearby Seeds" id="rkr-OG-OyZ">
-                        <barButtonItem key="rightBarButtonItem" title="Create" style="plain" id="Uae-Kn-xD5">
+                        <barButtonItem key="rightBarButtonItem" title="SEED" id="Uae-Kn-xD5">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="jua-O5-nQ4" kind="presentation" id="V6i-GY-xV5"/>
                             </connections>
@@ -82,7 +84,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSy-YC-ebx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1145" y="253"/>
+            <point key="canvasLocation" x="1142" y="251"/>
         </scene>
         <!--Create Seed View Controller-->
         <scene sceneID="szU-j9-iEF">
@@ -97,25 +99,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Actual link" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vq6-98-Ppr">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Some descriptive title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-L5-7za">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="next"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOr-re-OEX">
-                                <state key="normal" title="Publish Seed"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="PUBLISH SEED">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="publishSeedTapped:" destination="jua-O5-nQ4" eventType="touchUpInside" id="VYv-GG-ziz"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vq6-98-Ppr" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="20" id="6fB-6r-jLC"/>
                             <constraint firstItem="oOr-re-OEX" firstAttribute="centerX" secondItem="7dL-DU-OD5" secondAttribute="centerX" id="CRr-z5-73k"/>
@@ -134,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gb9-IW-ng6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1973.5999999999999" y="-427.73613193403304"/>
+            <point key="canvasLocation" x="1934" y="-419"/>
         </scene>
         <!--Seed Web View Controller-->
         <scene sceneID="jYJ-Pn-B4f">
@@ -152,15 +157,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlT-qO-Wfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="252"/>
+            <point key="canvasLocation" x="1934" y="251"/>
         </scene>
         <!--Seed-->
         <scene sceneID="kNX-Kk-ZoD">
             <objects>
                 <navigationController title="Seed" id="v74-xM-Ucx" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qQn-7P-TVX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qQn-7P-TVX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="Uvr-gg-5J6" kind="relationship" relationship="rootViewController" id="KFN-6w-t2p"/>

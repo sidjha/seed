@@ -34,6 +34,8 @@
 
     self.seedsTableView = self.tableView;
 
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
     // Search for new seeds every 30 seconds.
     [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(triggerNewSeedsSearch:) userInfo:nil repeats:YES];
 }
@@ -93,6 +95,10 @@
     cell.timestampLabel.text = [self.seeds objectAtIndex:indexPath.row][@"timestamp"];
     cell.captionLabel.text = [self.seeds objectAtIndex:indexPath.row][@"title"];
     cell.linkLabel.text = [self.seeds objectAtIndex:indexPath.row][@"link"];
+
+    cell.preservesSuperviewLayoutMargins = false;
+    cell.separatorInset = UIEdgeInsetsZero;
+    cell.layoutMargins = UIEdgeInsetsZero;
 
     return cell;
 }
