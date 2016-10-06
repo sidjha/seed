@@ -92,7 +92,19 @@
     SeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"seedCell" forIndexPath:indexPath];
 
     cell.seederLabel.text = [self.seeds objectAtIndex:indexPath.row][@"seeder_name"];
-    cell.timestampLabel.text = [self.seeds objectAtIndex:indexPath.row][@"timestamp"];
+
+    NSString *rawTimestamp = [self.seeds objectAtIndex:indexPath.row][@"timestamp"];
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
+    [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];
+    NSDate *date = [dateFormatter dateFromString:rawTimestamp];
+
+    [dateFormatter setDateFormat:@"MMM d h:mm a"];
+
+    NSString *timestamp = [dateFormatter stringFromDate:date];
+
+    cell.timestampLabel.text = timestamp;
     cell.captionLabel.text = [self.seeds objectAtIndex:indexPath.row][@"title"];
     cell.linkLabel.text = [self.seeds objectAtIndex:indexPath.row][@"link"];
 
