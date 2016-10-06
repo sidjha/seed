@@ -119,10 +119,20 @@
                                     <action selector="publishSeedTapped:" destination="jua-O5-nQ4" eventType="touchUpInside" id="VYv-GG-ziz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUk-Ke-5ml">
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="jua-O5-nQ4" eventType="touchUpInside" id="qoC-XH-FZB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vq6-98-Ppr" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="20" id="6fB-6r-jLC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="OUk-Ke-5ml" secondAttribute="leading" id="BpU-BL-geo"/>
                             <constraint firstItem="oOr-re-OEX" firstAttribute="centerX" secondItem="7dL-DU-OD5" secondAttribute="centerX" id="CRr-z5-73k"/>
                             <constraint firstItem="xW4-L5-7za" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="20" id="Yt9-1V-eto"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xW4-L5-7za" secondAttribute="trailing" constant="40" id="eJ6-cF-Go7"/>
@@ -130,9 +140,11 @@
                             <constraint firstItem="vq6-98-Ppr" firstAttribute="top" secondItem="xW4-L5-7za" secondAttribute="bottom" constant="20" id="kvC-l6-dUk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vq6-98-Ppr" secondAttribute="trailing" constant="40" id="qwa-IY-Foq"/>
                             <constraint firstItem="uHi-HS-TQC" firstAttribute="top" secondItem="oOr-re-OEX" secondAttribute="bottom" constant="100" id="vw5-Ji-DRs"/>
+                            <constraint firstItem="OUk-Ke-5ml" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" id="yqV-GV-0Ay"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="OUk-Ke-5ml" id="DFt-aj-QXc"/>
                         <outlet property="seedLinkTextView" destination="vq6-98-Ppr" id="HuH-pB-79t"/>
                         <outlet property="seedTitleTextView" destination="xW4-L5-7za" id="IHO-v1-wmn"/>
                     </connections>
@@ -157,13 +169,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlT-qO-Wfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="251"/>
+            <point key="canvasLocation" x="1961" y="274"/>
         </scene>
         <!--Seed-->
         <scene sceneID="kNX-Kk-ZoD">
             <objects>
                 <navigationController title="Seed" id="v74-xM-Ucx" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qQn-7P-TVX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qQn-7P-TVX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

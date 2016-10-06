@@ -37,6 +37,10 @@
     [self postSeedToServer];
 }
 
+- (IBAction)closeButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void) doneAction:(id) sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
