@@ -18,7 +18,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    self.seedWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
+
+    UIBarButtonItem *closeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:nil action:@selector(closeWebView:)];
+
+    UINavigationItem *navItem = [[UINavigationItem alloc] init];
+
+    navItem.leftBarButtonItem = closeButton;
+
+    navBar.items = @[navItem];
+
+    navBar.topItem.title = @"Viewing Seed";
+
+    [self.view addSubview:navBar];
+
+    self.seedWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
 
     self.seedWebView.delegate = self;
 
@@ -28,6 +42,10 @@
 
     [self.view addSubview:self.seedWebView];
 
+}
+
+- (void) closeWebView:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
