@@ -24,6 +24,7 @@
 		EB968CD41D8D62EF00B8E454 /* SeedWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD31D8D62EF00B8E454 /* SeedWebViewController.m */; };
 		EB968CD71D952B0A00B8E454 /* CreateSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */; };
 		EBA32E011D96598A00C1677A /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA32E001D96598A00C1677A /* LocationController.m */; };
+		EBD82BEB1DA6FCC6008CD705 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSeedViewController.m; sourceTree = "<group>"; };
 		EBA32DFF1D96598A00C1677A /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
 		EBA32E001D96598A00C1677A /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
+		EBD82BE91DA6FCC6008CD705 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = ../IntroViewController.h; sourceTree = "<group>"; };
+		EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = ../IntroViewController.m; sourceTree = "<group>"; };
 		F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +157,8 @@
 				EB16A97F1D58240600E96404 /* AppDelegate.h */,
 				EB16A9801D58240600E96404 /* AppDelegate.m */,
 				EB16A9851D58240600E96404 /* Main.storyboard */,
+				EBD82BE91DA6FCC6008CD705 /* IntroViewController.h */,
+				EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */,
 				EB968CD51D952B0A00B8E454 /* CreateSeedViewController.h */,
 				EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */,
 				EBA32DFF1D96598A00C1677A /* LocationController.h */,
@@ -397,6 +402,7 @@
 				EB3EEB2E1D87974E007C7EE3 /* SeedsTableViewController.m in Sources */,
 				EB968CD41D8D62EF00B8E454 /* SeedWebViewController.m in Sources */,
 				EBA32E011D96598A00C1677A /* LocationController.m in Sources */,
+				EBD82BEB1DA6FCC6008CD705 /* IntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

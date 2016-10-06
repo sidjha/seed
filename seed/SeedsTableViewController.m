@@ -13,6 +13,7 @@
 #import "SeedWebViewController.h"
 #import "CreateSeedViewController.h"
 #import "LocationController.h"
+#import "EAIntroView.h"
 
 @interface SeedsTableViewController ()
 

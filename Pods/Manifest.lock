@@ -14,13 +14,19 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - EAIntroView (2.8.1):
+    - EARestrictedScrollView (~> 0.2.0)
+  - EARestrictedScrollView (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - EAIntroView
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  EAIntroView: 73abfa89caa311f450af876421d950b96679e845
+  EARestrictedScrollView: f86d61e16c61d3e93c84f8e96e83122a2a3b7631
 
-PODFILE CHECKSUM: fffded0cd131555a4d8b3bd25002d480aaf14f2e
+PODFILE CHECKSUM: 77201f5401f2184d3d02c552ebfc668d31cfb418
 
 COCOAPODS: 1.0.1
