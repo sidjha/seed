@@ -28,10 +28,10 @@
     // TODO: Do we need to do anything else w.r.t. LocationController initialization?
     self.locationController.delegate = self;
 
+    /*
     NSMutableDictionary *d1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"@sidjha", @"seeder_id", @"6h ago", @"timestamp", @"How to observe meteor shower tonight", @"title", @"http://nytimes.com", @"link", nil];
     NSMutableDictionary *d2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"@bunny", @"seeder_id", @"8h ago", @"timestamp", @"Any tennis players?", @"title", @"http://nytimes.com", @"link", nil];
-
-    self.seeds = [[NSMutableArray alloc] initWithArray:@[d1, d2]];
+     */
 
     self.seedsTableView = self.tableView;
 
@@ -82,7 +82,23 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    NSInteger numSections = 0;
+
+    if ([self.seeds count] > 0) {
+        numSections = 1;
+        self.tableView.backgroundView = nil;
+    } else {
+        UILabel *noDataLabel         = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width - 20, self.tableView.bounds.size.height)];
+        noDataLabel.text             = @"Be the first one to seed in this area! \nTap SEED on the top right.";
+        noDataLabel.numberOfLines = 4;
+        noDataLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        noDataLabel.textColor        = [UIColor grayColor];
+        noDataLabel.font = [UIFont fontWithName:@"Georgia" size:18];
+        noDataLabel.textAlignment    = NSTextAlignmentCenter;
+        self.tableView.backgroundView = noDataLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return numSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -24,6 +24,8 @@
     page1.desc = @"Seeds are interesting links from \npeople currently nearby.";
     page1.titleColor = [UIColor blackColor];
     page1.titleFont = [UIFont fontWithName:@"Georgia-Bold" size:20];
+    page1.titlePositionY = 240;
+    page1.descPositionY = 220;
 
     page1.descColor = [UIColor blackColor];
     page1.descFont = [UIFont fontWithName:@"Georgia" size:16];
@@ -36,6 +38,9 @@
     page2.descColor = [UIColor blackColor];
     page2.descFont = [UIFont fontWithName:@"Georgia" size:16];
 
+    page2.titlePositionY = 240;
+    page2.descPositionY = 220;
+
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1, page2]];
 
     intro.delegate = self;
@@ -46,7 +51,7 @@
 
     intro.pageControl.pageIndicatorTintColor = [UIColor blackColor];
     intro.pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-    intro.pageControlY = 70.f;
+    intro.pageControlY = 110.f;
 
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [btn setFrame:CGRectMake(0, 0, 80, 40)];
@@ -56,7 +61,7 @@
     btn.layer.cornerRadius = 10;
     btn.layer.borderColor = [[UIColor blackColor] CGColor];
     intro.skipButton = btn;
-    intro.skipButtonY = 50.f;
+    intro.skipButtonY = 70.f;
     intro.skipButtonAlignment = EAViewAlignmentCenter;
 
 

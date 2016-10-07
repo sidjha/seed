@@ -39,7 +39,7 @@ static LocationController *sharedCLDelegate;
 }
 
 - (void) askForPermission {
-    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager requestWhenInUseAuthorization];
 }
 
 /*
@@ -86,7 +86,7 @@ static LocationController *sharedCLDelegate;
     // Show dialog about location if status is changed, and it's
     // not "Authorized Always".
     // But don't show dialog if status hasn't been determined yet
-    if (status != kCLAuthorizationStatusAuthorizedAlways && status != kCLAuthorizationStatusNotDetermined) {
+    if (status != kCLAuthorizationStatusAuthorizedAlways && status != kCLAuthorizationStatusAuthorizedWhenInUse && status != kCLAuthorizationStatusNotDetermined) {
        // [self showNoLocationAccessDialog];
     }
 }
