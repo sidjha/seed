@@ -20,21 +20,49 @@
     // Do any additional setup after loading the view.
 
     EAIntroPage *page1 = [EAIntroPage page];
-    page1.title = @"Hello world";
-    page1.desc = @"Welcome to seed. IT is awesome.";
+    page1.title = @"Discover what's \ntrending nearby.";
+    page1.desc = @"Seeds are interesting links from \npeople currently nearby.";
+    page1.titleColor = [UIColor blackColor];
+    page1.titleFont = [UIFont fontWithName:@"Georgia-Bold" size:20];
+
+    page1.descColor = [UIColor blackColor];
+    page1.descFont = [UIFont fontWithName:@"Georgia" size:16];
 
     EAIntroPage *page2 = [EAIntroPage page];
-    page2.title = @"Second page";
-    page2.desc = @"You've reached page 2 of the tutorial.";
+    page2.title = @"Become a local curator.";
+    page2.desc = @"Curate articles and videos \nfor people around you.";
+    page2.titleColor = [UIColor blackColor];
+    page2.titleFont = [UIFont fontWithName:@"Georgia-Bold" size:20];
+    page2.descColor = [UIColor blackColor];
+    page2.descFont = [UIFont fontWithName:@"Georgia" size:16];
 
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1, page2]];
 
     intro.delegate = self;
 
-    intro.backgroundColor = [UIColor colorWithRed:0.f green:0.49f blue:0.96f alpha:1.f];
+    UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title1"]];
+    intro.titleView = titleView;
+    intro.titleViewY = 90;
+
+    intro.pageControl.pageIndicatorTintColor = [UIColor blackColor];
+    intro.pageControl.currentPageIndicatorTintColor = [UIColor redColor];
+    intro.pageControlY = 70.f;
+
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [btn setFrame:CGRectMake(0, 0, 80, 40)];
+    [btn setTitle:@"SKIP" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    btn.layer.borderWidth = 1.f;
+    btn.layer.cornerRadius = 10;
+    btn.layer.borderColor = [[UIColor blackColor] CGColor];
+    intro.skipButton = btn;
+    intro.skipButtonY = 50.f;
+    intro.skipButtonAlignment = EAViewAlignmentCenter;
+
+
+    intro.backgroundColor = [UIColor whiteColor];
 
     [intro showInView:self.view animateDuration:0.0];
-
 }
 
 - (void)introDidFinish:(EAIntroView *)introView {
