@@ -61,7 +61,8 @@
     data[@"link"] = self.seedLinkTextView.text;
     data[@"lat"] = lat;
     data[@"lng"] = lng;
-    data[@"user_id"] = @"1"; // TODO: get user id of current user
+    data[@"vendor_id_str"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"vendorIDStr"];
+    data[@"username"] = @"anon123";
 
     [manager POST:URLString parameters:data progress:nil success:^(NSURLSessionTask *task, id responseObject) {
 

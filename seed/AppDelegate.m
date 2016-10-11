@@ -20,8 +20,21 @@
     if ([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]) {
         NSLog(@"Location key present.");
     }
-    
+
+    // Get vendor ID and store it locally
+    [[NSUserDefaults standardUserDefaults] setObject:[self getVendorID] forKey:@"vendorIDStr"];
+
     return YES;
+}
+
+
+- (NSString *) getVendorID {
+
+    NSUUID *vendorID = [UIDevice currentDevice].identifierForVendor;
+
+    NSString *vendorIDStr = [vendorID UUIDString];
+
+    return vendorIDStr;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
