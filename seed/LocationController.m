@@ -98,7 +98,6 @@ static LocationController *sharedCLDelegate;
 
     // Trigger delegate method to inform of new location
     [self.delegate locationUpdate:self.location];
-
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {

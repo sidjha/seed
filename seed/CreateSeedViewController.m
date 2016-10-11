@@ -78,30 +78,39 @@
     NSString *URLString = [NSString stringWithFormat:@"https://seedalpha88.herokuapp.com/seed/create"];
 
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
 
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
 
-    data[@"title"] = title;
-    data[@"link"] = link;
-    data[@"lat"] = lat;
-    data[@"lng"] = lng;
-    data[@"vendor_id_str"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"vendorIDStr"];
-    // TODO: generate random usernames
-    data[@"username"] = @"anon123";
+        NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 
-    [manager POST:URLString parameters:data progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        data[@"title"] = title;
+        data[@"link"] = link;
+        data[@"lat"] = lat;
+        data[@"lng"] = lng;
+        data[@"vendor_id_str"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"vendorIDStr"];
+        // TODO: generate random usernames
+        data[@"username"] = @"anon123";
 
-        NSLog(@"Data: %@", responseObject);
+        [manager POST:URLString parameters:data progress:nil success:^(NSURLSessionTask *task, id responseObject) {
 
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [self dismissViewControllerAnimated:YES completion:nil];
+            NSLog(@"Data: %@", responseObject);
 
-    } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    }];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
+
+            [self dismissViewControllerAnimated:YES completion:nil];
+
+        } failure:^(NSURLSessionTask *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
+
+        }];
+    });
 }
 
 /*
