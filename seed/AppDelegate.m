@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Flurry.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,9 @@
     if ([launchOptions objectForKey:@"UIApplicationLaunchOptionsLocationKey"]) {
         NSLog(@"Location key present.");
     }
+
+    [Flurry setDebugLogEnabled:YES];
+    [Flurry startSession:@"J75YBQWSMGNP3V58SJVQ"];
 
     // Get vendor ID and store it locally
     [[NSUserDefaults standardUserDefaults] setObject:[self getVendorID] forKey:@"vendorIDStr"];

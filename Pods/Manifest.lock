@@ -17,19 +17,22 @@ PODS:
   - EAIntroView (2.9.0):
     - EARestrictedScrollView (~> 1.1.0)
   - EARestrictedScrollView (1.1.0)
+  - Flurry-iOS-SDK/FlurrySDK (7.8.0)
   - MBProgressHUD (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking
   - EAIntroView (~> 2.9.0)
+  - Flurry-iOS-SDK/FlurrySDK
   - MBProgressHUD (~> 1.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   EAIntroView: 76f68cc56242f2e25359419e6ecc2344ee7e1756
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
+  Flurry-iOS-SDK: 388df247b9d92659527b608c891c7e474cd9d00e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
 
-PODFILE CHECKSUM: adc125639a84a590d1244aeb3a5ee3b693120306
+PODFILE CHECKSUM: efdc1bc01b7da1f07992247bab038cd72ded803e
 
 COCOAPODS: 1.0.1
