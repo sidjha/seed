@@ -215,16 +215,17 @@
         <scene sceneID="oOB-NT-7Cb">
             <objects>
                 <tableViewController title="Nearby Seeds" id="Uvr-gg-5J6" customClass="SeedsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qfu-MD-YqI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qfu-MD-YqI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.95515280961990356" green="0.89669603109359741" blue="0.82484370470046997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="seedCell" rowHeight="125" id="cTw-Zl-cT1" customClass="SeedTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="375" height="125"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="seedCell" rowHeight="163" id="cTw-Zl-cT1" customClass="SeedTableViewCell">
+                                <rect key="frame" x="0.0" y="92" width="375" height="163"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cTw-Zl-cT1" id="Y9H-CC-agy">
-                                    <frame key="frameInset" width="375" height="124"/>
+                                    <frame key="frameInset" width="375" height="162"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 MINUTES ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiH-1j-E8z">
@@ -232,13 +233,8 @@
                                             <color key="textColor" red="0.89725321531295776" green="0.24094855785369873" blue="0.19631752371788025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link caption link caption" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI5-5Y-xXv">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link caption link caption asdf s dfsdf asdf sdf " lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI5-5Y-xXv">
                                             <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actual link" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EU0-lI-0nF">
-                                            <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -247,17 +243,25 @@
                                             <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Actual link asdf asfsfs fasf asd asdf sd fsafsadfasdfasdfasfsd " lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EU0-lI-0nF">
+                                            <frame key="frameInset" minX="23" minY="108" width="329" height="49"/>
+                                            <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="OiH-1j-E8z" secondAttribute="trailing" constant="15" id="6uv-VF-2qg"/>
                                         <constraint firstItem="Q9y-hi-OeS" firstAttribute="top" secondItem="Y9H-CC-agy" secondAttribute="topMargin" constant="10" id="K6F-vb-u8e"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="EU0-lI-0nF" secondAttribute="trailing" constant="15" id="SaP-13-LKs"/>
                                         <constraint firstItem="EU0-lI-0nF" firstAttribute="leading" secondItem="Y9H-CC-agy" secondAttribute="leadingMargin" constant="15" id="Ybz-SM-sRI"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ZI5-5Y-xXv" secondAttribute="trailing" constant="15" id="b4U-oj-qDY"/>
                                         <constraint firstItem="Q9y-hi-OeS" firstAttribute="leading" secondItem="Y9H-CC-agy" secondAttribute="leadingMargin" constant="15" id="cqQ-7P-mD3"/>
                                         <constraint firstItem="ZI5-5Y-xXv" firstAttribute="leading" secondItem="Y9H-CC-agy" secondAttribute="leadingMargin" constant="15" id="emb-BP-VI0"/>
                                         <constraint firstItem="ZI5-5Y-xXv" firstAttribute="top" secondItem="Q9y-hi-OeS" secondAttribute="bottom" constant="20" id="pgu-hW-SfK"/>
                                         <constraint firstItem="OiH-1j-E8z" firstAttribute="centerY" secondItem="Q9y-hi-OeS" secondAttribute="centerY" id="tcA-Ue-WP4"/>
-                                        <constraint firstItem="EU0-lI-0nF" firstAttribute="top" secondItem="ZI5-5Y-xXv" secondAttribute="bottom" constant="5" id="xHL-y5-3qK"/>
+                                        <constraint firstItem="EU0-lI-0nF" firstAttribute="top" secondItem="ZI5-5Y-xXv" secondAttribute="bottom" constant="10" id="xHL-y5-3qK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -294,7 +298,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSy-YC-ebx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="251"/>
+            <point key="canvasLocation" x="1141.5999999999999" y="250.52473763118442"/>
         </scene>
         <!--Create Seed View Controller-->
         <scene sceneID="szU-j9-iEF">
@@ -309,13 +313,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vq6-98-Ppr">
-                                <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="URL" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xW4-L5-7za">
-                                <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -350,7 +354,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vq6-98-Ppr" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="20" id="6fB-6r-jLC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LFe-YS-az7" secondAttribute="trailing" constant="40" id="9uO-xX-QyL"/>
