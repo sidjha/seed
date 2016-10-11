@@ -70,7 +70,7 @@
     [intro showInView:self.view animateDuration:0.0];
 }
 
-- (void)introDidFinish:(EAIntroView *)introView {
+- (void)introDidFinish:(EAIntroView *)introView wasSkipped:(BOOL)wasSkipped {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:
                                 @"Main" bundle:[NSBundle mainBundle]];
     UINavigationController *myController = [storyboard instantiateViewControllerWithIdentifier:@"rootVC"];

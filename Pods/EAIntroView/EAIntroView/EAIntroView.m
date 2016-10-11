@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSMutableArray *footerConstraints;
 @property (nonatomic, strong) NSMutableArray *titleViewConstraints;
 
+@property (nonatomic, assign) BOOL skipped;
+
 @end
 
 @interface EAIntroPage()
@@ -70,7 +72,8 @@
     _skipButtonY = EA_EMPTY_PROPERTY;
     _skipButtonSideMargin = 10.f;
     _skipButtonAlignment = EAViewAlignmentRight;
-    
+	_skipped = NO;
+    _limitPageIndex = -1;
     
     [self buildBackgroundImage];
     
@@ -176,8 +179,8 @@
     //removeFromSuperview should be called after a delay
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        if ([(id)self.delegate respondsToSelector:@selector(introDidFinish:)]) {
-            [self.delegate introDidFinish:self];
+        if ([(id)self.delegate respondsToSelector:@selector(introDidFinish:wasSkipped:)]) {
+            [self.delegate introDidFinish:self wasSkipped:self.skipped];
         }
         
         [self removeFromSuperview];
@@ -185,6 +188,7 @@
 }
 
 - (void)skipIntroduction {
+	self.skipped = YES;
     [self hideWithFadeOutDuration:0.3];
 }
 
@@ -334,6 +338,10 @@
     
     pageView.accessibilityLabel = [NSString stringWithFormat:@"intro_page_%lu",(unsigned long)[self.pages indexOfObject:page]];
     
+    if(page.alpha < 1.f || !page.bgImage) {
+        self.backgroundColor = [UIColor clearColor];
+    }
+
     if(page.customView) {
         [pageView addSubview:page.customView];
         
@@ -350,6 +358,14 @@
     tapToNextButton.frame = pageView.bounds;
     tapToNextButton.translatesAutoresizingMaskIntoConstraints = NO;
     [tapToNextButton addTarget:self action:@selector(goToNext:) forControlEvents:UIControlEventTouchUpInside];
+
+    NSString *accessibilityLabel = [self accessibilityLabelForPage:page];
+    if (accessibilityLabel.length > 0) {
+        tapToNextButton.isAccessibilityElement = YES;
+        tapToNextButton.accessibilityLabel = accessibilityLabel;
+        tapToNextButton.accessibilityTraits = UIAccessibilityTraitButton;
+    }
+    
     [pageView addSubview:tapToNextButton];
     
     NSMutableArray *constraints = @[].mutableCopy;
@@ -376,11 +392,12 @@
         titleLabel.font = page.titleFont;
         titleLabel.textColor = page.titleColor;
         titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.textAlignment = page.titleAlignment;
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         titleLabel.numberOfLines = 0;
         titleLabel.tag = kTitleLabelTag;
         titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        titleLabel.isAccessibilityElement = NO;
         
         [pageView addSubview:titleLabel];
         NSLayoutConstraint *weakConstraint = [NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:titleLabel attribute:NSLayoutAttributeTop multiplier:1.0 constant:page.titlePositionY];
@@ -397,10 +414,11 @@
         descLabel.font = page.descFont;
         descLabel.textColor = page.descColor;
         descLabel.backgroundColor = [UIColor clearColor];
-        descLabel.textAlignment = NSTextAlignmentCenter;
+        descLabel.textAlignment = page.descAlignment;
         descLabel.userInteractionEnabled = NO;
         descLabel.tag = kDescLabelTag;
         descLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        descLabel.isAccessibilityElement = NO;
         
         [pageView addSubview:descLabel];
         NSLayoutConstraint *weakConstraint = [NSLayoutConstraint constraintWithItem:pageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:descLabel attribute:NSLayoutAttributeTop multiplier:1.0 constant:page.descPositionY];
@@ -422,13 +440,26 @@
         }
     }
     
-    if(page.alpha < 1.f || !page.bgImage) {
-        self.backgroundColor = [UIColor clearColor];
-    }
-    
     pageView.alpha = page.alpha;
     
     return pageView;
+}
+
+- (NSString*)accessibilityLabelForPage:(EAIntroPage*)page
+{
+    NSString *accessibilityLabel = nil;
+    if (page.title) {
+        if (page.desc) {
+            accessibilityLabel = [NSString stringWithFormat:@"%@, %@", page.title, page.desc];
+        }
+        else {
+            accessibilityLabel = page.title;
+        }
+    }
+    else {
+        accessibilityLabel = page.desc;
+    }
+    return accessibilityLabel;
 }
 
 - (void)appendCloseViewAtXIndex:(CGFloat*)xIndex {
@@ -625,6 +656,11 @@ CGFloat easeOutValue(CGFloat value) {
     // Increase with 1 page when feature enabled:
     if (self.swipeToExit) {
         numberOfPages = numberOfPages + 1;
+    }
+    
+    // Descrease to limited index when scrolling is restricted:
+    if (self.limitPageIndex != -1) {
+        numberOfPages = self.limitPageIndex + 1;
     }
     
     // Adjust contentSize of ScrollView:
@@ -923,7 +959,8 @@ CGFloat easeOutValue(CGFloat value) {
         NSLog(@"Wrong initialPageIndex received: %ld",(long)initialPageIndex);
         return;
     }
-    
+
+	self.skipped = NO;
     self.currentPageIndex = initialPageIndex;
     self.alpha = 0;
 
@@ -985,14 +1022,16 @@ CGFloat easeOutValue(CGFloat value) {
     }
 }
 
-- (void)limitScrollingToPage:(NSUInteger)lastPageIndex {
-    if (lastPageIndex >= [self.pages count]) {
+- (void)setLimitPageIndex:(NSInteger)limitPageIndex {
+    _limitPageIndex = limitPageIndex;
+    
+    if (limitPageIndex < 0 || limitPageIndex >= self.pages.count) {
+        _limitPageIndex = -1;
         self.scrollingEnabled = YES;
         return;
+    } else {
+        self.scrollView.restrictionArea = CGRectMake(0, 0, (self.limitPageIndex + 1) * self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
     }
-    
-    _scrollingEnabled = YES;
-    self.scrollView.restrictionArea = CGRectMake(0, 0, (lastPageIndex + 1) * self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
 }
 
 @end

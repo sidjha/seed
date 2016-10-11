@@ -9,6 +9,7 @@
 #import "CreateSeedViewController.h"
 #import "AFHTTPSessionManager.h"
 #import "AFURLRequestSerialization.h"
+#import "MBProgressHUD.h"
 
 @interface CreateSeedViewController ()
 
@@ -76,6 +77,7 @@
 
     NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/seed/create"];
 
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
 
@@ -93,10 +95,12 @@
 
         NSLog(@"Data: %@", responseObject);
 
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self dismissViewControllerAnimated:YES completion:nil];
 
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
 }
 

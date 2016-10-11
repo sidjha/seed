@@ -14,6 +14,7 @@
 #import "CreateSeedViewController.h"
 #import "LocationController.h"
 #import "EAIntroView.h"
+#import "MBProgressHUD.h"
 
 @interface SeedsTableViewController ()
 
@@ -53,6 +54,8 @@
 
     NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/seeds?lat=%@&lng=%@", lat, lng];
 
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
 
@@ -62,9 +65,11 @@
 
         self.seeds = [responseObject objectForKey:@"seeds"];
         [self.tableView reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
 
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
     
 }
