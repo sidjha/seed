@@ -62,6 +62,7 @@
     data[@"lat"] = lat;
     data[@"lng"] = lng;
     data[@"vendor_id_str"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"vendorIDStr"];
+    // TODO: generate random usernames
     data[@"username"] = @"anon123";
 
     [manager POST:URLString parameters:data progress:nil success:^(NSURLSessionTask *task, id responseObject) {

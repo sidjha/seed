@@ -52,7 +52,7 @@
     NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 
     data[@"username"] = username;
-    data[@"user_id"] = @"1";
+    data[@"vendor_id_str"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"vendorIDStr"];
 
     [manager POST:URLString parameters:data progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"Data: %@", responseObject);

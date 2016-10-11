@@ -37,14 +37,12 @@
 - (void) doneAction:(id)sender {
     NSString *name = self.nameField.text;
 
-    NSArray *strings = [name componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-
-    [self postNameToServer:strings];
+    [self postNameToServer:name];
 
 }
 
 
-- (void) postNameToServer:(NSArray *)names {
+- (void) postNameToServer:(NSString *)name {
 
     NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/user/update"];
 
@@ -53,9 +51,8 @@
 
     NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 
-    data[@"first_name"] = names[0];
-    if ([names count] > 1)
-        data[@"last_initial"] = names[1];
+    data[@"real_name"] = name;
+    data[@"vendor_id_str"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"vendorIDStr"];
 
     [manager POST:URLString parameters:data progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"Data: %@", responseObject);
