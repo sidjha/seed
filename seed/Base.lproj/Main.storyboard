@@ -308,7 +308,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" text="Actual link" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vq6-98-Ppr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vq6-98-Ppr">
                                 <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -320,9 +320,10 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOr-re-OEX">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="PUBLISH SEED">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOr-re-OEX">
+                                <frame key="frameInset" minX="289" minY="20" width="70" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="PUBLISH">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -330,8 +331,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUk-Ke-5ml">
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
-                                <state key="normal" title="x">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="BACK">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -343,26 +344,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paste in the link you'd like to share" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFe-YS-az7">
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.957386314868927" green="0.9073638916015625" blue="0.8285941481590271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vq6-98-Ppr" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="20" id="6fB-6r-jLC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LFe-YS-az7" secondAttribute="trailing" constant="40" id="9uO-xX-QyL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oOr-re-OEX" secondAttribute="trailing" id="BVy-7z-auD"/>
                             <constraint firstAttribute="leadingMargin" secondItem="OUk-Ke-5ml" secondAttribute="leading" id="BpU-BL-geo"/>
-                            <constraint firstItem="oOr-re-OEX" firstAttribute="centerX" secondItem="7dL-DU-OD5" secondAttribute="centerX" id="CRr-z5-73k"/>
+                            <constraint firstItem="LFe-YS-az7" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="25" id="Jm7-Bl-oE0"/>
+                            <constraint firstItem="oOr-re-OEX" firstAttribute="baseline" secondItem="OUk-Ke-5ml" secondAttribute="baseline" id="QFo-ds-32W"/>
+                            <constraint firstItem="oOr-re-OEX" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="10" id="SRh-fW-GBS"/>
                             <constraint firstItem="xW4-L5-7za" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="20" id="Yt9-1V-eto"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xW4-L5-7za" secondAttribute="trailing" constant="40" id="eJ6-cF-Go7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="huT-oZ-xof" secondAttribute="trailing" constant="40" id="frI-bd-Enj"/>
-                            <constraint firstItem="xW4-L5-7za" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="30" id="gs5-o4-qk1"/>
+                            <constraint firstItem="xW4-L5-7za" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="70" id="gs5-o4-qk1"/>
                             <constraint firstItem="huT-oZ-xof" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="25" id="gys-KV-hMd"/>
-                            <constraint firstItem="huT-oZ-xof" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="37" id="kT1-Pd-Qaz"/>
+                            <constraint firstItem="huT-oZ-xof" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="77" id="kT1-Pd-Qaz"/>
                             <constraint firstItem="vq6-98-Ppr" firstAttribute="top" secondItem="xW4-L5-7za" secondAttribute="bottom" constant="20" id="kvC-l6-dUk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vq6-98-Ppr" secondAttribute="trailing" constant="40" id="qwa-IY-Foq"/>
-                            <constraint firstItem="uHi-HS-TQC" firstAttribute="top" secondItem="oOr-re-OEX" secondAttribute="bottom" constant="100" id="vw5-Ji-DRs"/>
-                            <constraint firstItem="OUk-Ke-5ml" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" id="yqV-GV-0Ay"/>
+                            <constraint firstItem="OUk-Ke-5ml" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="10" id="yqV-GV-0Ay"/>
+                            <constraint firstItem="LFe-YS-az7" firstAttribute="top" secondItem="xW4-L5-7za" secondAttribute="bottom" constant="27" id="zHo-vw-C2b"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="OUk-Ke-5ml" id="DFt-aj-QXc"/>
+                        <outlet property="linkPlaceholderLabel" destination="LFe-YS-az7" id="2Fb-7Y-mde"/>
                         <outlet property="seedLinkTextView" destination="vq6-98-Ppr" id="HuH-pB-79t"/>
                         <outlet property="seedTitleTextView" destination="xW4-L5-7za" id="IHO-v1-wmn"/>
                         <outlet property="titlePlaceholderLabel" destination="huT-oZ-xof" id="93c-5B-7sB"/>

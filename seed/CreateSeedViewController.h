@@ -15,6 +15,7 @@
 @property (nonatomic, strong) LocationController* locationController;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UILabel *titlePlaceholderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *linkPlaceholderLabel;
 
 - (IBAction)publishSeedTapped:(id)sender;
 - (IBAction)closeButtonTapped:(id)sender;

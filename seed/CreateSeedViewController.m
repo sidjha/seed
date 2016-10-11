@@ -118,18 +118,24 @@
  */
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-
-    self.titlePlaceholderLabel.hidden = ([textView.text length] > 0);
-
+    // Show/hide placeholder label
+    if (textView.tag == 1) {
+        self.titlePlaceholderLabel.hidden = ([textView.text length] > 0);
+    } else {
+        self.linkPlaceholderLabel.hidden = ([textView.text length] > 0);
+    }
 }
 
-- (void)textViewDidChange:(UITextView *)textView
-{
-    self.titlePlaceholderLabel.hidden = ([textView.text length] > 0);
+- (void)textViewDidChange:(UITextView *)textView {
+    // Show/hide placeholder label
+    if (textView.tag == 1) {
+        self.titlePlaceholderLabel.hidden = ([textView.text length] > 0);
+    } else {
+        self.linkPlaceholderLabel.hidden = ([textView.text length] > 0);
+    }
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     // Limit title to 140 characters, and link to 2000 characters.
     if (textView.tag == 1) {
         return textView.text.length + (text.length - range.length) <= 140;
