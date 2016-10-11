@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *seedLinkTextView;
 @property (nonatomic, strong) LocationController* locationController;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (weak, nonatomic) IBOutlet UILabel *titlePlaceholderLabel;
 
 - (IBAction)publishSeedTapped:(id)sender;
 - (IBAction)closeButtonTapped:(id)sender;
