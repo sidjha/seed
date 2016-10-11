@@ -75,7 +75,7 @@
     NSNumber *lat = [NSNumber numberWithDouble:self.locationController.location.coordinate.latitude];
     NSNumber *lng = [NSNumber numberWithDouble:self.locationController.location.coordinate.longitude];
 
-    NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/seed/create"];
+    NSString *URLString = [NSString stringWithFormat:@"https://seedalpha88.herokuapp.com/seed/create"];
 
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

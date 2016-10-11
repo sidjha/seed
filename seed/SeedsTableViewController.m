@@ -52,7 +52,7 @@
     NSString *lat = [[NSNumber numberWithDouble:self.locationController.location.coordinate.latitude] stringValue];
     NSString *lng = [[NSNumber numberWithDouble:self.locationController.location.coordinate.longitude] stringValue];
 
-    NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/seeds?lat=%@&lng=%@", lat, lng];
+    NSString *URLString = [NSString stringWithFormat:@"https://seedalpha88.herokuapp.com/seeds?lat=%@&lng=%@", lat, lng];
 
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 

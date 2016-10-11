@@ -44,7 +44,7 @@
 
 - (void) postNameToServer:(NSString *)name {
 
-    NSString *URLString = [NSString stringWithFormat:@"http://0.0.0.0:5000/user/update"];
+    NSString *URLString = [NSString stringWithFormat:@"https://seedalpha88.herokuapp.com/user/update"];
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
