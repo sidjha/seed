@@ -353,8 +353,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xW4-L5-7za" secondAttribute="trailing" constant="40" id="eJ6-cF-Go7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="huT-oZ-xof" secondAttribute="trailing" constant="40" id="frI-bd-Enj"/>
                             <constraint firstItem="xW4-L5-7za" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="30" id="gs5-o4-qk1"/>
-                            <constraint firstItem="huT-oZ-xof" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="20" id="gys-KV-hMd"/>
-                            <constraint firstItem="huT-oZ-xof" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="30" id="kT1-Pd-Qaz"/>
+                            <constraint firstItem="huT-oZ-xof" firstAttribute="leading" secondItem="7dL-DU-OD5" secondAttribute="leadingMargin" constant="25" id="gys-KV-hMd"/>
+                            <constraint firstItem="huT-oZ-xof" firstAttribute="top" secondItem="OlB-VT-lB0" secondAttribute="bottom" constant="37" id="kT1-Pd-Qaz"/>
                             <constraint firstItem="vq6-98-Ppr" firstAttribute="top" secondItem="xW4-L5-7za" secondAttribute="bottom" constant="20" id="kvC-l6-dUk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vq6-98-Ppr" secondAttribute="trailing" constant="40" id="qwa-IY-Foq"/>
                             <constraint firstItem="uHi-HS-TQC" firstAttribute="top" secondItem="oOr-re-OEX" secondAttribute="bottom" constant="100" id="vw5-Ji-DRs"/>

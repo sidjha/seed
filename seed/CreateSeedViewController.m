@@ -28,6 +28,8 @@
 
     self.navigationItem.leftBarButtonItem = doneButton;
     self.locationController = [LocationController sharedLocationController];
+
+    [self.seedTitleTextView becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +52,9 @@
 
         // Show error message to user
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Invalid Link" message:@"Please enter a valid link. e.g. http://google.com" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.seedLinkTextView becomeFirstResponder];
+        }];
         [alertController addAction:okAction];
 
         [self presentViewController:alertController animated:YES completion:nil];
@@ -96,16 +100,32 @@
     }];
 }
 
-- (void)textViewDidBeginEditing:(UITextView *)textView {
-    [self.titlePlaceholderLabel setHidden:YES];
+/*
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    NSInteger nextTag = textField.tag + 1;
+    // Try to find next responder
+    UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+    if (nextResponder) {
+        // Found next responder, so set it.
+        [nextResponder becomeFirstResponder];
+    } else {
+        // Not found, so remove keyboard.
+        [textField resignFirstResponder];
+    }
+    return NO; // We do not want UITextField to insert line-breaks.
 }
+ */
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
-    if ([textView.text isEqualToString:@""]) {
-        [self.titlePlaceholderLabel setHidden:NO];
-    } else {
-        [self.titlePlaceholderLabel setHidden:YES];
-    }
+
+    self.titlePlaceholderLabel.hidden = ([textView.text length] > 0);
+
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    self.titlePlaceholderLabel.hidden = ([textView.text length] > 0);
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
