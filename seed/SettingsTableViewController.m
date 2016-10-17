@@ -35,22 +35,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            // TODO: show edit username screen
+            // show edit username screen
         } else {
-            // TODO: show edit display name screen
+            // show edit display name screen
         }
     } else {
         if (indexPath.row == 0) {
-            IntroViewController *introVC = [[IntroViewController alloc] init];
+            /*IntroViewController *introVC = [[IntroViewController alloc] init];
             [self presentViewController:introVC animated:YES completion:nil];
+             */
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.mesh8.co"]];
         } else if (indexPath.row == 1) {
             // Show Privacy Policy
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://mesh8.co/seed/privacy"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.mesh8.co/seedsy/privacy"]];
         } else if (indexPath.row == 2) {
             // Show Privacy Policy
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://mesh8.co/seed/tos"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.mesh8.co/seedsy/terms"]];
         } else {
-            NSString *urlEmail = @"mailto:favor8.support@mesh8.co?subject=Feedback from Seed user&body=";
+            NSString *urlEmail = @"mailto:support@mesh8.co?subject=Feedback from Seed user&body=";
             NSString *url = [urlEmail stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
             [[UIApplication sharedApplication]  openURL: [NSURL URLWithString: url]];
         }

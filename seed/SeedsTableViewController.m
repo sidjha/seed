@@ -37,6 +37,13 @@
 
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+
+    UIEdgeInsets inset = UIEdgeInsetsMake(45, 0, 0, 0);
+    self.tableView.contentInset = inset;
+
     // Search for new seeds every 30 seconds.
     [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(triggerNewSeedsSearch:) userInfo:nil repeats:YES];
 }
