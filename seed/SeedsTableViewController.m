@@ -41,9 +41,43 @@
 
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 
-    UIEdgeInsets inset = UIEdgeInsetsMake(45, 0, 0, 0);
+    //[self.navigationController.navigationBar setFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
+
+    UIEdgeInsets inset = UIEdgeInsetsMake(40.0, 0, 0, 0);
     self.tableView.contentInset = inset;
 
+    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 54)];
+
+    [titleView setBackgroundColor:[UIColor whiteColor]];
+
+    UILabel *titleLabel = [[UILabel alloc] init];
+
+    titleLabel.backgroundColor = [UIColor whiteColor];
+    titleLabel.numberOfLines = 1;
+    titleLabel.font = [UIFont fontWithName:@"Baskerville-SemiBold" size:20.0];
+
+    //titleLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:1.0];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor blackColor];
+    titleLabel.text = @"Nearby Seeds";
+    [titleLabel sizeToFit];
+    [titleLabel setCenter:CGPointMake(titleView.center.x, titleLabel.center.y)];
+
+    UIButton *locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    locationButton.frame = CGRectMake(0,22, 100, 22);
+    [locationButton addTarget:self action:@selector(showLocationMap:) forControlEvents:UIControlEventTouchUpInside];
+    [locationButton setTitle:@"within 500m" forState:UIControlStateNormal];
+    [locationButton setTintColor:[UIColor blackColor]];
+    [locationButton.titleLabel setFont:[UIFont systemFontOfSize:14.0 weight:UIFontWeightThin]];
+    [locationButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    locationButton.center = CGPointMake(titleView.center.x, locationButton.center.y);
+
+    [titleView addSubview:titleLabel];
+    [titleView addSubview:locationButton];
+
+    self.navigationItem.titleView = titleView;
+
+    [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:15.0 forBarMetrics:UIBarMetricsDefault];
     // Search for new seeds every 30 seconds.
     [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(triggerNewSeedsSearch:) userInfo:nil repeats:YES];
 }
@@ -51,6 +85,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) showLocationMap:(id)sender {
+    NSLog(@"Show location map");
 }
 
 - (void) getNearbyContent {
