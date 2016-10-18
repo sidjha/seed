@@ -22,6 +22,19 @@
         NSLog(@"Location key present.");
     }
 
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"tutorialVC"];
+        self.window.rootViewController = viewController;
+    } else {
+        UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"rootVC"];
+        self.window.rootViewController = viewController;
+    }
+
     [Flurry setDebugLogEnabled:YES];
     [Flurry startSession:@"J75YBQWSMGNP3V58SJVQ"];
 

@@ -434,7 +434,7 @@
         <!--Intro View Controller-->
         <scene sceneID="pW1-YU-4Fq">
             <objects>
-                <viewController id="zij-yp-27I" customClass="IntroViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorialVC" id="zij-yp-27I" customClass="IntroViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rO8-Uw-Evo"/>
                         <viewControllerLayoutGuide type="bottom" id="BUy-lZ-jbE"/>
