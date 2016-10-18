@@ -183,11 +183,11 @@
     [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];
     NSDate *date = [dateFormatter dateFromString:rawTimestamp];
 
-    [dateFormatter setDateFormat:@"MMM d h:mm a"];
+    //[dateFormatter setDateFormat:@"MMM d h:mm a"];
+    //NSString *timestamp = [dateFormatter stringFromDate:date];
 
-    NSString *timestamp = [dateFormatter stringFromDate:date];
+    cell.timestampLabel.text = [self relativeDateStringForDate:date];
 
-    cell.timestampLabel.text = timestamp;
     cell.captionLabel.text = [self.seeds objectAtIndex:indexPath.row][@"title"];
     cell.linkLabel.text = [self.seeds objectAtIndex:indexPath.row][@"link"];
 
@@ -196,6 +196,36 @@
     cell.layoutMargins = UIEdgeInsetsZero;
 
     return cell;
+}
+
+- (NSString *)relativeDateStringForDate:(NSDate *)date
+{
+
+    // Taken from: http://stackoverflow.com/questions/20487465/how-to-convert-nsdate-in-to-relative-format-as-today-yesterday-a-week-ago
+    NSCalendarUnit units = NSCalendarUnitDay | NSCalendarUnitWeekOfYear |
+    NSCalendarUnitMonth | NSCalendarUnitYear;
+
+    // if `date` is before "now" (i.e. in the past) then the components will be positive
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:units
+                                                                   fromDate:date
+                                                                     toDate:[NSDate date]
+                                                                    options:0];
+
+    if (components.year > 0) {
+        return [NSString stringWithFormat:@"%ld years ago", (long)components.year];
+    } else if (components.month > 0) {
+        return [NSString stringWithFormat:@"%ld months ago", (long)components.month];
+    } else if (components.weekOfYear > 0) {
+        return [NSString stringWithFormat:@"%ld weeks ago", (long)components.weekOfYear];
+    } else if (components.day > 0) {
+        if (components.day > 1) {
+            return [NSString stringWithFormat:@"%ld days ago", (long)components.day];
+        } else {
+            return @"Yesterday";
+        }
+    } else {
+        return @"Today";
+    }
 }
 
 /*
