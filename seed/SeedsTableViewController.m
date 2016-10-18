@@ -73,6 +73,18 @@
     [locationButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     locationButton.center = CGPointMake(titleView.center.x, locationButton.center.y);
 
+    // Underline "Within 500m" button
+    NSMutableAttributedString *mat = [locationButton.titleLabel.attributedText mutableCopy];
+    [mat addAttributes:@{NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle)} range:NSMakeRange(0, mat.length)];
+
+    locationButton.titleLabel.attributedText = mat;
+
+    // Add tap gesture to "Nearby Seeds" label as well to show map
+    UITapGestureRecognizer *labelTapGestureRec = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocationMap:)];
+    labelTapGestureRec.numberOfTapsRequired = 1;
+    [titleLabel addGestureRecognizer:labelTapGestureRec];
+    titleLabel.userInteractionEnabled = YES;
+
     [titleView addSubview:titleLabel];
     [titleView addSubview:locationButton];
 
