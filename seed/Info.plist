@@ -45,5 +45,12 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SourceSerifPro-Semibold.ttf</string>
+		<string>SourceSerifPro-Regular.ttf</string>
+		<string>SourceSerifPro-Light.ttf</string>
+		<string>SourceSerifPro-Bold.ttf</string>
+	</array>
 </dict>
 </plist>

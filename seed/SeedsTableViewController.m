@@ -54,7 +54,7 @@
 
     titleLabel.backgroundColor = [UIColor whiteColor];
     titleLabel.numberOfLines = 1;
-    titleLabel.font = [UIFont fontWithName:@"Baskerville-SemiBold" size:20.0];
+    titleLabel.font = [UIFont fontWithName:@"SourceSerifPro-Bold" size:20.0];
 
     //titleLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:1.0];
     titleLabel.textAlignment = NSTextAlignmentCenter;

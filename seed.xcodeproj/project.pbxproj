@@ -27,6 +27,12 @@
 		EB968CD41D8D62EF00B8E454 /* SeedWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD31D8D62EF00B8E454 /* SeedWebViewController.m */; };
 		EB968CD71D952B0A00B8E454 /* CreateSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */; };
 		EBA32E011D96598A00C1677A /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA32E001D96598A00C1677A /* LocationController.m */; };
+		EBADA8371DB5CD6B007057B9 /* SourceSerifPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8311DB5CD6B007057B9 /* SourceSerifPro-Semibold.ttf */; };
+		EBADA8381DB5CD6B007057B9 /* SourceSerifPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8321DB5CD6B007057B9 /* SourceSerifPro-Regular.ttf */; };
+		EBADA8391DB5CD6B007057B9 /* SourceSerifPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8331DB5CD6B007057B9 /* SourceSerifPro-Light.ttf */; };
+		EBADA83A1DB5CD6B007057B9 /* SourceSerifPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8341DB5CD6B007057B9 /* SourceSerifPro-ExtraLight.ttf */; };
+		EBADA83B1DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8351DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf */; };
+		EBADA83C1DB5CD6B007057B9 /* SourceSerifPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8361DB5CD6B007057B9 /* SourceSerifPro-Black.ttf */; };
 		EBD82BEB1DA6FCC6008CD705 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +92,12 @@
 		EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateSeedViewController.m; sourceTree = "<group>"; };
 		EBA32DFF1D96598A00C1677A /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
 		EBA32E001D96598A00C1677A /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
+		EBADA8311DB5CD6B007057B9 /* SourceSerifPro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-Semibold.ttf"; path = "../SourceSerifPro-Semibold.ttf"; sourceTree = "<group>"; };
+		EBADA8321DB5CD6B007057B9 /* SourceSerifPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-Regular.ttf"; path = "../SourceSerifPro-Regular.ttf"; sourceTree = "<group>"; };
+		EBADA8331DB5CD6B007057B9 /* SourceSerifPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-Light.ttf"; path = "../SourceSerifPro-Light.ttf"; sourceTree = "<group>"; };
+		EBADA8341DB5CD6B007057B9 /* SourceSerifPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-ExtraLight.ttf"; path = "../SourceSerifPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		EBADA8351DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-Bold.ttf"; path = "../SourceSerifPro-Bold.ttf"; sourceTree = "<group>"; };
+		EBADA8361DB5CD6B007057B9 /* SourceSerifPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-Black.ttf"; path = "../SourceSerifPro-Black.ttf"; sourceTree = "<group>"; };
 		EBD82BE91DA6FCC6008CD705 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = ../IntroViewController.h; sourceTree = "<group>"; };
 		EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = ../IntroViewController.m; sourceTree = "<group>"; };
 		F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +201,7 @@
 				EB6FF83F1DA82B3C00CC315B /* EditNameTableViewController.h */,
 				EB6FF8401DA82B3C00CC315B /* EditNameTableViewController.m */,
 				EB16A9881D58240600E96404 /* Assets.xcassets */,
+				EBADA8241DB5CD21007057B9 /* Resources */,
 				EB16A98A1D58240600E96404 /* LaunchScreen.storyboard */,
 				EB16A98D1D58240600E96404 /* Info.plist */,
 				EB16A97C1D58240600E96404 /* Supporting Files */,
@@ -220,6 +233,19 @@
 				EB16A9A31D58240600E96404 /* Info.plist */,
 			);
 			path = seedUITests;
+			sourceTree = "<group>";
+		};
+		EBADA8241DB5CD21007057B9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EBADA8311DB5CD6B007057B9 /* SourceSerifPro-Semibold.ttf */,
+				EBADA8321DB5CD6B007057B9 /* SourceSerifPro-Regular.ttf */,
+				EBADA8331DB5CD6B007057B9 /* SourceSerifPro-Light.ttf */,
+				EBADA8341DB5CD6B007057B9 /* SourceSerifPro-ExtraLight.ttf */,
+				EBADA8351DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf */,
+				EBADA8361DB5CD6B007057B9 /* SourceSerifPro-Black.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,8 +360,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBADA8391DB5CD6B007057B9 /* SourceSerifPro-Light.ttf in Resources */,
+				EBADA83C1DB5CD6B007057B9 /* SourceSerifPro-Black.ttf in Resources */,
+				EBADA83A1DB5CD6B007057B9 /* SourceSerifPro-ExtraLight.ttf in Resources */,
 				EB16A98C1D58240600E96404 /* LaunchScreen.storyboard in Resources */,
 				EB16A9891D58240600E96404 /* Assets.xcassets in Resources */,
+				EBADA83B1DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf in Resources */,
+				EBADA8371DB5CD6B007057B9 /* SourceSerifPro-Semibold.ttf in Resources */,
+				EBADA8381DB5CD6B007057B9 /* SourceSerifPro-Regular.ttf in Resources */,
 				EB16A9871D58240600E96404 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
