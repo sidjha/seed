@@ -14,6 +14,7 @@
 #import "CreateSeedViewController.h"
 #import "LocationController.h"
 #import "EAIntroView.h"
+#import "CircleMapViewController.h"
 
 @interface SeedsTableViewController ()
 
@@ -88,7 +89,13 @@
 }
 
 - (void) showLocationMap:(id)sender {
-    NSLog(@"Show location map");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CircleMapViewController *mapVC = [storyboard instantiateViewControllerWithIdentifier:@"currentCircleMapVC"];
+    mapVC.modalPresentationStyle = UIModalPresentationFullScreen;
+
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mapVC];
+
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void) getNearbyContent {

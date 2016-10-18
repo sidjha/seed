@@ -33,6 +33,7 @@
 		EBADA83A1DB5CD6B007057B9 /* SourceSerifPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8341DB5CD6B007057B9 /* SourceSerifPro-ExtraLight.ttf */; };
 		EBADA83B1DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8351DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf */; };
 		EBADA83C1DB5CD6B007057B9 /* SourceSerifPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8361DB5CD6B007057B9 /* SourceSerifPro-Black.ttf */; };
+		EBADA83F1DB5D7D9007057B9 /* CircleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADA83E1DB5D7D9007057B9 /* CircleMapViewController.m */; };
 		EBD82BEB1DA6FCC6008CD705 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,8 @@
 		EBADA8341DB5CD6B007057B9 /* SourceSerifPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-ExtraLight.ttf"; path = "../SourceSerifPro-ExtraLight.ttf"; sourceTree = "<group>"; };
 		EBADA8351DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-Bold.ttf"; path = "../SourceSerifPro-Bold.ttf"; sourceTree = "<group>"; };
 		EBADA8361DB5CD6B007057B9 /* SourceSerifPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-Black.ttf"; path = "../SourceSerifPro-Black.ttf"; sourceTree = "<group>"; };
+		EBADA83D1DB5D7D9007057B9 /* CircleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleMapViewController.h; path = ../CircleMapViewController.h; sourceTree = "<group>"; };
+		EBADA83E1DB5D7D9007057B9 /* CircleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleMapViewController.m; path = ../CircleMapViewController.m; sourceTree = "<group>"; };
 		EBD82BE91DA6FCC6008CD705 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = ../IntroViewController.h; sourceTree = "<group>"; };
 		EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = ../IntroViewController.m; sourceTree = "<group>"; };
 		F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +187,8 @@
 				EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */,
 				EBA32DFF1D96598A00C1677A /* LocationController.h */,
 				EBA32E001D96598A00C1677A /* LocationController.m */,
+				EBADA83D1DB5D7D9007057B9 /* CircleMapViewController.h */,
+				EBADA83E1DB5D7D9007057B9 /* CircleMapViewController.m */,
 				EB968CD21D8D62EF00B8E454 /* SeedWebViewController.h */,
 				EB968CD31D8D62EF00B8E454 /* SeedWebViewController.m */,
 				EB3EEB2C1D87974E007C7EE3 /* SeedsTableViewController.h */,
@@ -446,6 +451,7 @@
 				EB16A9811D58240600E96404 /* AppDelegate.m in Sources */,
 				EB3EEB311D87B70C007C7EE3 /* SeedTableViewCell.m in Sources */,
 				EB16A97E1D58240600E96404 /* main.m in Sources */,
+				EBADA83F1DB5D7D9007057B9 /* CircleMapViewController.m in Sources */,
 				EB6FF8411DA82B3C00CC315B /* EditNameTableViewController.m in Sources */,
 				EB425A4B1D7D207B00BA54E0 /* SeedsViewController.m in Sources */,
 				EB3EEB2E1D87974E007C7EE3 /* SeedsTableViewController.m in Sources */,
