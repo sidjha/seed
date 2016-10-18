@@ -174,7 +174,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"seedCell" forIndexPath:indexPath];
 
-    cell.seederLabel.text = [self.seeds objectAtIndex:indexPath.row][@"seeder_name"];
+    cell.seederLabel.text = [self.seeds objectAtIndex:indexPath.row][@"username"];
 
     NSString *rawTimestamp = [self.seeds objectAtIndex:indexPath.row][@"timestamp"];
 
@@ -282,8 +282,6 @@
         SeedWebViewController *webViewController = (SeedWebViewController *) segue.destinationViewController;
 
         webViewController.urlToLoad = [NSURL URLWithString:[self.seeds objectAtIndex:indexPath.row][@"link"]];
-        
-        // webViewController.delegate = self;
     }
 }
 

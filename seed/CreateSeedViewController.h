@@ -8,7 +8,7 @@
 
 #import "LocationController.h"
 
-@interface CreateSeedViewController : UIViewController <UITextViewDelegate>
+@interface CreateSeedViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *seedTitleTextView;
 @property (weak, nonatomic) IBOutlet UITextView *seedLinkTextView;
@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UILabel *titlePlaceholderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *linkPlaceholderLabel;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
 
 - (IBAction)publishSeedTapped:(id)sender;
 - (IBAction)closeButtonTapped:(id)sender;

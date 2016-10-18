@@ -23,11 +23,8 @@
 
     self.seedLinkTextView.delegate = self;
     self.seedTitleTextView.delegate = self;
+    self.usernameField.delegate = self;
 
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
-    [doneButton setTintColor:[UIColor blueColor]];
-
-    self.navigationItem.leftBarButtonItem = doneButton;
     self.locationController = [LocationController sharedLocationController];
 
     [self.seedTitleTextView becomeFirstResponder];
@@ -66,9 +63,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void) doneAction:(id) sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void) postSeedToServer:(NSString *)title andLink:(NSString *)link {
 
@@ -90,8 +84,13 @@
         data[@"lat"] = lat;
         data[@"lng"] = lng;
         data[@"vendor_id_str"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"vendorIDStr"];
-        // TODO: generate random usernames
-        data[@"username"] = @"anon123";
+
+        if (self.usernameField.text != nil) {
+            data[@"username"] = self.usernameField.text;
+        } else {
+            // TODO: generate random usernames
+            data[@"username"] = @"anon123";
+        }
 
         [manager POST:URLString parameters:data progress:nil success:^(NSURLSessionTask *task, id responseObject) {
 
@@ -155,6 +154,17 @@
     } else {
         return textView.text.length + (text.length - range.length) <= 2000;
     }
+}
+
+#define ACCEPTABLE_CHARACTERS @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_."
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ACCEPTABLE_CHARACTERS] invertedSet];
+
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+
+    return [string isEqualToString:filtered];
 }
 
 /*
