@@ -15,6 +15,7 @@
 #import "LocationController.h"
 #import "EAIntroView.h"
 #import "CircleMapViewController.h"
+#import "ReportTableViewController.h"
 
 @interface SeedsTableViewController ()
 
@@ -93,6 +94,11 @@
     [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:15.0 forBarMetrics:UIBarMetricsDefault];
     // Search for new seeds every 30 seconds.
     [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(triggerNewSeedsSearch:) userInfo:nil repeats:YES];
+
+    // Configure long press gesture
+    UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(cellLongPress:)];
+    longPressGesture.delegate = self;
+    [self.tableView addGestureRecognizer:longPressGesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,7 +128,7 @@
 
     [manager GET:URLString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
 
-        NSLog(@"Response: %@", responseObject);
+        //NSLog(@"Response: %@", responseObject);
 
         self.seeds = [responseObject objectForKey:@"seeds"];
         [self.tableView reloadData];
@@ -196,6 +202,48 @@
     cell.layoutMargins = UIEdgeInsetsZero;
 
     return cell;
+}
+
+
+- (void) cellLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
+
+    CGPoint p = [gestureRecognizer locationInView:self.tableView];
+
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+
+    if (indexPath == nil) {
+
+    } else if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+
+        UIAlertAction *actionReport = [UIAlertAction actionWithTitle:@"Report this Seed" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+
+            [self reportSeed:[self.seeds objectAtIndex:indexPath.row][@"id"]];
+        }];
+
+        UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+
+        [actionSheet addAction:actionReport];
+        [actionSheet addAction:actionCancel];
+
+        [self presentViewController:actionSheet animated:YES completion:nil];
+    } else {
+
+    }
+
+}
+
+- (void) reportSeed:(id)seedID {
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+    UINavigationController *reportVCRoot = [storyboard instantiateViewControllerWithIdentifier:@"reportVCRoot"];
+    ReportTableViewController *reportVC = (ReportTableViewController *)reportVCRoot.viewControllers.firstObject;
+
+    reportVC.seedID = seedID;
+
+    [self presentViewController:reportVCRoot animated:YES completion:nil];
 }
 
 - (NSString *)relativeDateStringForDate:(NSDate *)date

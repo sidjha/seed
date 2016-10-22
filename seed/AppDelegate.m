@@ -35,7 +35,7 @@
         self.window.rootViewController = viewController;
     }
 
-    [Flurry setDebugLogEnabled:YES];
+    //z[Flurry setDebugLogEnabled:NO];
     [Flurry startSession:@"J75YBQWSMGNP3V58SJVQ"];
 
     // Get vendor ID and store it locally

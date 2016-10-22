@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B37E398F3CFDD9384DAE7C4 /* libPods-seed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */; };
+		EB06C79B1DBAC82100E39047 /* ReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06C79A1DBAC82100E39047 /* ReportTableViewController.m */; };
 		EB102DFB1D72A0BD003E7BAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */; };
 		EB102DFD1D72A285003E7BAF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB102DFC1D72A285003E7BAF /* MapKit.framework */; };
 		EB16A97E1D58240600E96404 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A97D1D58240600E96404 /* main.m */; };
@@ -20,7 +21,6 @@
 		EB16A9A21D58240600E96404 /* seedUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9A11D58240600E96404 /* seedUITests.m */; };
 		EB3EEB2E1D87974E007C7EE3 /* SeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3EEB2D1D87974E007C7EE3 /* SeedsTableViewController.m */; };
 		EB3EEB311D87B70C007C7EE3 /* SeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3EEB301D87B70C007C7EE3 /* SeedTableViewCell.m */; };
-		EB425A4B1D7D207B00BA54E0 /* SeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB425A4A1D7D207B00BA54E0 /* SeedsViewController.m */; };
 		EB6FF83B1DA8258B00CC315B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF83A1DA8258B00CC315B /* SettingsTableViewController.m */; };
 		EB6FF83E1DA82ABA00CC315B /* EditUsernameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF83D1DA82ABA00CC315B /* EditUsernameTableViewController.m */; };
 		EB6FF8411DA82B3C00CC315B /* EditNameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF8401DA82B3C00CC315B /* EditNameTableViewController.m */; };
@@ -57,6 +57,8 @@
 /* Begin PBXFileReference section */
 		36A057159C0DFCFD08CD79BD /* Pods-seed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seed/Pods-seed.debug.xcconfig"; sourceTree = "<group>"; };
 		C396ED0C8BF752ED373FC639 /* Pods-seed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed.release.xcconfig"; path = "Pods/Target Support Files/Pods-seed/Pods-seed.release.xcconfig"; sourceTree = "<group>"; };
+		EB06C7991DBAC82100E39047 /* ReportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportTableViewController.h; path = ../ReportTableViewController.h; sourceTree = "<group>"; };
+		EB06C79A1DBAC82100E39047 /* ReportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportTableViewController.m; path = ../ReportTableViewController.m; sourceTree = "<group>"; };
 		EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EB102DFC1D72A285003E7BAF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EB16A9791D58240600E96404 /* seed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seed.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,8 +81,6 @@
 		EB3EEB2D1D87974E007C7EE3 /* SeedsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedsTableViewController.m; sourceTree = "<group>"; };
 		EB3EEB2F1D87B70C007C7EE3 /* SeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeedTableViewCell.h; path = ../SeedTableViewCell.h; sourceTree = "<group>"; };
 		EB3EEB301D87B70C007C7EE3 /* SeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeedTableViewCell.m; path = ../SeedTableViewCell.m; sourceTree = "<group>"; };
-		EB425A491D7D207B00BA54E0 /* SeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedsViewController.h; sourceTree = "<group>"; };
-		EB425A4A1D7D207B00BA54E0 /* SeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedsViewController.m; sourceTree = "<group>"; };
 		EB6FF8391DA8258B00CC315B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		EB6FF83A1DA8258B00CC315B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		EB6FF83C1DA82ABA00CC315B /* EditUsernameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUsernameTableViewController.h; sourceTree = "<group>"; };
@@ -195,10 +195,10 @@
 				EB3EEB2D1D87974E007C7EE3 /* SeedsTableViewController.m */,
 				EB3EEB2F1D87B70C007C7EE3 /* SeedTableViewCell.h */,
 				EB3EEB301D87B70C007C7EE3 /* SeedTableViewCell.m */,
+				EB06C7991DBAC82100E39047 /* ReportTableViewController.h */,
+				EB06C79A1DBAC82100E39047 /* ReportTableViewController.m */,
 				EB16A9821D58240600E96404 /* OldLocationViewController.h */,
 				EB16A9831D58240600E96404 /* OldLocationViewController.m */,
-				EB425A491D7D207B00BA54E0 /* SeedsViewController.h */,
-				EB425A4A1D7D207B00BA54E0 /* SeedsViewController.m */,
 				EB6FF8391DA8258B00CC315B /* SettingsTableViewController.h */,
 				EB6FF83A1DA8258B00CC315B /* SettingsTableViewController.m */,
 				EB6FF83C1DA82ABA00CC315B /* EditUsernameTableViewController.h */,
@@ -453,7 +453,7 @@
 				EB16A97E1D58240600E96404 /* main.m in Sources */,
 				EBADA83F1DB5D7D9007057B9 /* CircleMapViewController.m in Sources */,
 				EB6FF8411DA82B3C00CC315B /* EditNameTableViewController.m in Sources */,
-				EB425A4B1D7D207B00BA54E0 /* SeedsViewController.m in Sources */,
+				EB06C79B1DBAC82100E39047 /* ReportTableViewController.m in Sources */,
 				EB3EEB2E1D87974E007C7EE3 /* SeedsTableViewController.m in Sources */,
 				EB6FF83E1DA82ABA00CC315B /* EditUsernameTableViewController.m in Sources */,
 				EB968CD41D8D62EF00B8E454 /* SeedWebViewController.m in Sources */,
