@@ -144,6 +144,9 @@
             [self.seeds addObject:aSeed];
         }
 
+        NSSortDescriptor *dateSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
+        self.seeds = [NSMutableArray arrayWithArray:[self.seeds sortedArrayUsingDescriptors:@[dateSortDescriptor]]];
+
         [self.tableView reloadData];
 
 
