@@ -48,8 +48,12 @@
 }
 
 - (void) sendReportToServer:(NSString *)reason {
-
-    NSString *URLString = [NSString stringWithFormat:@"https://seedalpha88.herokuapp.com/seed/report"];
+#if DEVELOPMENT
+#define REPORT_SEED_ENDPOINT @"http://0.0.0.0:5000/seed/report"
+#else
+#define REPORT_SEED_ENDPOINT @"https://seedalpha88.herokuapp.com/seed/report"
+#endif
+    NSString *URLString = [NSString stringWithFormat:REPORT_SEED_ENDPOINT];
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];

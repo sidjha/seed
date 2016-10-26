@@ -121,7 +121,12 @@
     NSString *lat = [[NSNumber numberWithDouble:self.locationController.location.coordinate.latitude] stringValue];
     NSString *lng = [[NSNumber numberWithDouble:self.locationController.location.coordinate.longitude] stringValue];
 
-    NSString *URLString = [NSString stringWithFormat:@"https://seedalpha88.herokuapp.com/seeds?lat=%@&lng=%@", lat, lng];
+#if DEVELOPMENT
+#define NEARBY_SEEDS_ENDPOINT @"http://0.0.0.0:5000/seeds"
+#else
+#define NEARBY_SEEDS_ENDPOINT @"https://seedalpha88.herokuapp.com/seeds"
+#endif
+    NSString *URLString = [NSString stringWithFormat:@"%@?lat=%@&lng=%@", NEARBY_SEEDS_ENDPOINT, lat, lng];
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
@@ -180,6 +185,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"seedCell" forIndexPath:indexPath];
 
+    cell.seedID = [self.seeds objectAtIndex:indexPath.row][@"id"];
+
     cell.seederLabel.text = [self.seeds objectAtIndex:indexPath.row][@"username"];
 
     NSString *rawTimestamp = [self.seeds objectAtIndex:indexPath.row][@"timestamp"];
@@ -196,6 +203,8 @@
 
     cell.captionLabel.text = [self.seeds objectAtIndex:indexPath.row][@"title"];
     cell.linkLabel.text = [self.seeds objectAtIndex:indexPath.row][@"link"];
+
+    cell.upvoteCount = [[self.seeds objectAtIndex:indexPath.row][@"upvotes"] intValue];
 
     cell.preservesSuperviewLayoutMargins = false;
     cell.separatorInset = UIEdgeInsetsZero;
@@ -333,4 +342,6 @@
     }
 }
 
+- (IBAction)upvoteButtonTapped:(id)sender {
+}
 @end

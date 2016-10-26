@@ -17,5 +17,4 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *createSeedButton;
 @property (nonatomic, strong) LocationController *locationController;
 
-
 @end

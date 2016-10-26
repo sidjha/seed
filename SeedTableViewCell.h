@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YHRoundBorderedButton.h"
 
 @interface SeedTableViewCell : UITableViewCell
 
@@ -14,5 +15,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *linkLabel;
+@property (weak, nonatomic) IBOutlet YHRoundBorderedButton *upvoteButton;
+@property (assign, nonatomic) NSInteger *upvoteCount;
+@property (strong, nonatomic) id seedID;
+
+@property (assign, nonatomic) BOOL hasbeenUpvoted;
+
+- (IBAction)upvoteButtonTapped:(id)sender;
 
 @end

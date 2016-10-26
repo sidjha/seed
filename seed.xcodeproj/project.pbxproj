@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B37E398F3CFDD9384DAE7C4 /* libPods-seed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */; };
+		6388CD2EE9C2080D9ED85BA0 /* libPods-seed dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4A9B1A0DB35521B86AA3F0 /* libPods-seed dev.a */; };
 		EB06C79B1DBAC82100E39047 /* ReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06C79A1DBAC82100E39047 /* ReportTableViewController.m */; };
 		EB102DFB1D72A0BD003E7BAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */; };
 		EB102DFD1D72A285003E7BAF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB102DFC1D72A285003E7BAF /* MapKit.framework */; };
@@ -24,6 +25,32 @@
 		EB6FF83B1DA8258B00CC315B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF83A1DA8258B00CC315B /* SettingsTableViewController.m */; };
 		EB6FF83E1DA82ABA00CC315B /* EditUsernameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF83D1DA82ABA00CC315B /* EditUsernameTableViewController.m */; };
 		EB6FF8411DA82B3C00CC315B /* EditNameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF8401DA82B3C00CC315B /* EditNameTableViewController.m */; };
+		EB839EC81DBB199B00DB0B16 /* OldLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9831D58240600E96404 /* OldLocationViewController.m */; };
+		EB839EC91DBB199B00DB0B16 /* CreateSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */; };
+		EB839ECA1DBB199B00DB0B16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9801D58240600E96404 /* AppDelegate.m */; };
+		EB839ECB1DBB199B00DB0B16 /* SeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3EEB301D87B70C007C7EE3 /* SeedTableViewCell.m */; };
+		EB839ECC1DBB199B00DB0B16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A97D1D58240600E96404 /* main.m */; };
+		EB839ECD1DBB199B00DB0B16 /* CircleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADA83E1DB5D7D9007057B9 /* CircleMapViewController.m */; };
+		EB839ECE1DBB199B00DB0B16 /* EditNameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF8401DA82B3C00CC315B /* EditNameTableViewController.m */; };
+		EB839ECF1DBB199B00DB0B16 /* ReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06C79A1DBAC82100E39047 /* ReportTableViewController.m */; };
+		EB839ED01DBB199B00DB0B16 /* SeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3EEB2D1D87974E007C7EE3 /* SeedsTableViewController.m */; };
+		EB839ED11DBB199B00DB0B16 /* EditUsernameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF83D1DA82ABA00CC315B /* EditUsernameTableViewController.m */; };
+		EB839ED21DBB199B00DB0B16 /* SeedWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD31D8D62EF00B8E454 /* SeedWebViewController.m */; };
+		EB839ED31DBB199B00DB0B16 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA32E001D96598A00C1677A /* LocationController.m */; };
+		EB839ED41DBB199B00DB0B16 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF83A1DA8258B00CC315B /* SettingsTableViewController.m */; };
+		EB839ED51DBB199B00DB0B16 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */; };
+		EB839ED71DBB199B00DB0B16 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */; };
+		EB839ED81DBB199B00DB0B16 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB102DFC1D72A285003E7BAF /* MapKit.framework */; };
+		EB839ED91DBB199B00DB0B16 /* libPods-seed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */; };
+		EB839EDB1DBB199B00DB0B16 /* SourceSerifPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8331DB5CD6B007057B9 /* SourceSerifPro-Light.ttf */; };
+		EB839EDC1DBB199B00DB0B16 /* SourceSerifPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8361DB5CD6B007057B9 /* SourceSerifPro-Black.ttf */; };
+		EB839EDD1DBB199B00DB0B16 /* SourceSerifPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8341DB5CD6B007057B9 /* SourceSerifPro-ExtraLight.ttf */; };
+		EB839EDE1DBB199B00DB0B16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB16A98A1D58240600E96404 /* LaunchScreen.storyboard */; };
+		EB839EDF1DBB199B00DB0B16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB16A9881D58240600E96404 /* Assets.xcassets */; };
+		EB839EE01DBB199B00DB0B16 /* SourceSerifPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8351DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf */; };
+		EB839EE11DBB199B00DB0B16 /* SourceSerifPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8311DB5CD6B007057B9 /* SourceSerifPro-Semibold.ttf */; };
+		EB839EE21DBB199B00DB0B16 /* SourceSerifPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8321DB5CD6B007057B9 /* SourceSerifPro-Regular.ttf */; };
+		EB839EE31DBB199B00DB0B16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB16A9851D58240600E96404 /* Main.storyboard */; };
 		EB968CD41D8D62EF00B8E454 /* SeedWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD31D8D62EF00B8E454 /* SeedWebViewController.m */; };
 		EB968CD71D952B0A00B8E454 /* CreateSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */; };
 		EBA32E011D96598A00C1677A /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA32E001D96598A00C1677A /* LocationController.m */; };
@@ -55,7 +82,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28985EF84360B7E83352C9A9 /* Pods-seed dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-seed dev/Pods-seed dev.release.xcconfig"; sourceTree = "<group>"; };
 		36A057159C0DFCFD08CD79BD /* Pods-seed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seed/Pods-seed.debug.xcconfig"; sourceTree = "<group>"; };
+		3C4A9B1A0DB35521B86AA3F0 /* libPods-seed dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seed dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C396ED0C8BF752ED373FC639 /* Pods-seed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed.release.xcconfig"; path = "Pods/Target Support Files/Pods-seed/Pods-seed.release.xcconfig"; sourceTree = "<group>"; };
 		EB06C7991DBAC82100E39047 /* ReportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportTableViewController.h; path = ../ReportTableViewController.h; sourceTree = "<group>"; };
 		EB06C79A1DBAC82100E39047 /* ReportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportTableViewController.m; path = ../ReportTableViewController.m; sourceTree = "<group>"; };
@@ -87,6 +116,8 @@
 		EB6FF83D1DA82ABA00CC315B /* EditUsernameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUsernameTableViewController.m; sourceTree = "<group>"; };
 		EB6FF83F1DA82B3C00CC315B /* EditNameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNameTableViewController.h; sourceTree = "<group>"; };
 		EB6FF8401DA82B3C00CC315B /* EditNameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNameTableViewController.m; sourceTree = "<group>"; };
+		EB839EE91DBB199B00DB0B16 /* seed dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seed dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB839EEA1DBB199C00DB0B16 /* seed dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "seed dev-Info.plist"; path = "/Users/sidjha/Dropbox/sandbox/seed/seed/seed dev-Info.plist"; sourceTree = "<absolute>"; };
 		EB968CD21D8D62EF00B8E454 /* SeedWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedWebViewController.h; sourceTree = "<group>"; };
 		EB968CD31D8D62EF00B8E454 /* SeedWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedWebViewController.m; sourceTree = "<group>"; };
 		EB968CD51D952B0A00B8E454 /* CreateSeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateSeedViewController.h; sourceTree = "<group>"; };
@@ -103,6 +134,7 @@
 		EBADA83E1DB5D7D9007057B9 /* CircleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleMapViewController.m; path = ../CircleMapViewController.m; sourceTree = "<group>"; };
 		EBD82BE91DA6FCC6008CD705 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = ../IntroViewController.h; sourceTree = "<group>"; };
 		EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = ../IntroViewController.m; sourceTree = "<group>"; };
+		F3C39E751893AADCD7715AD4 /* Pods-seed dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seed dev/Pods-seed dev.debug.xcconfig"; sourceTree = "<group>"; };
 		F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,6 +163,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB839ED61DBB199B00DB0B16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB839ED71DBB199B00DB0B16 /* CoreLocation.framework in Frameworks */,
+				EB839ED81DBB199B00DB0B16 /* MapKit.framework in Frameworks */,
+				EB839ED91DBB199B00DB0B16 /* libPods-seed.a in Frameworks */,
+				6388CD2EE9C2080D9ED85BA0 /* libPods-seed dev.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -140,6 +183,7 @@
 				EB102DFC1D72A285003E7BAF /* MapKit.framework */,
 				EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */,
 				F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */,
+				3C4A9B1A0DB35521B86AA3F0 /* libPods-seed dev.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,6 +193,8 @@
 			children = (
 				36A057159C0DFCFD08CD79BD /* Pods-seed.debug.xcconfig */,
 				C396ED0C8BF752ED373FC639 /* Pods-seed.release.xcconfig */,
+				F3C39E751893AADCD7715AD4 /* Pods-seed dev.debug.xcconfig */,
+				28985EF84360B7E83352C9A9 /* Pods-seed dev.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -171,6 +217,7 @@
 				EB16A9791D58240600E96404 /* seed.app */,
 				EB16A9921D58240600E96404 /* seedTests.xctest */,
 				EB16A99D1D58240600E96404 /* seedUITests.xctest */,
+				EB839EE91DBB199B00DB0B16 /* seed dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +256,7 @@
 				EBADA8241DB5CD21007057B9 /* Resources */,
 				EB16A98A1D58240600E96404 /* LaunchScreen.storyboard */,
 				EB16A98D1D58240600E96404 /* Info.plist */,
+				EB839EEA1DBB199C00DB0B16 /* seed dev-Info.plist */,
 				EB16A97C1D58240600E96404 /* Supporting Files */,
 			);
 			path = seed;
@@ -312,6 +360,26 @@
 			productReference = EB16A99D1D58240600E96404 /* seedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EB839EC51DBB199B00DB0B16 /* seed dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB839EE61DBB199B00DB0B16 /* Build configuration list for PBXNativeTarget "seed dev" */;
+			buildPhases = (
+				EB839EC61DBB199B00DB0B16 /* [CP] Check Pods Manifest.lock */,
+				EB839EC71DBB199B00DB0B16 /* Sources */,
+				EB839ED61DBB199B00DB0B16 /* Frameworks */,
+				EB839EDA1DBB199B00DB0B16 /* Resources */,
+				EB839EE41DBB199B00DB0B16 /* [CP] Embed Pods Frameworks */,
+				EB839EE51DBB199B00DB0B16 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "seed dev";
+			productName = seed;
+			productReference = EB839EE91DBB199B00DB0B16 /* seed dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -338,6 +406,9 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = EB16A9781D58240600E96404;
 					};
+					EB839EC51DBB199B00DB0B16 = {
+						DevelopmentTeam = S67B2C3XJ7;
+					};
 				};
 			};
 			buildConfigurationList = EB16A9741D58240600E96404 /* Build configuration list for PBXProject "seed" */;
@@ -354,6 +425,7 @@
 			projectRoot = "";
 			targets = (
 				EB16A9781D58240600E96404 /* seed */,
+				EB839EC51DBB199B00DB0B16 /* seed dev */,
 				EB16A9911D58240600E96404 /* seedTests */,
 				EB16A99C1D58240600E96404 /* seedUITests */,
 			);
@@ -391,6 +463,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB839EDA1DBB199B00DB0B16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB839EDB1DBB199B00DB0B16 /* SourceSerifPro-Light.ttf in Resources */,
+				EB839EDC1DBB199B00DB0B16 /* SourceSerifPro-Black.ttf in Resources */,
+				EB839EDD1DBB199B00DB0B16 /* SourceSerifPro-ExtraLight.ttf in Resources */,
+				EB839EDE1DBB199B00DB0B16 /* LaunchScreen.storyboard in Resources */,
+				EB839EDF1DBB199B00DB0B16 /* Assets.xcassets in Resources */,
+				EB839EE01DBB199B00DB0B16 /* SourceSerifPro-Bold.ttf in Resources */,
+				EB839EE11DBB199B00DB0B16 /* SourceSerifPro-Semibold.ttf in Resources */,
+				EB839EE21DBB199B00DB0B16 /* SourceSerifPro-Regular.ttf in Resources */,
+				EB839EE31DBB199B00DB0B16 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -422,6 +510,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-seed/Pods-seed-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB839EC61DBB199B00DB0B16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB839EE41DBB199B00DB0B16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-seed dev/Pods-seed dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB839EE51DBB199B00DB0B16 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-seed dev/Pods-seed dev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F101C17EB08B0FEA65EFCFD6 /* [CP] Embed Pods Frameworks */ = {
@@ -476,6 +609,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB16A9A21D58240600E96404 /* seedUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB839EC71DBB199B00DB0B16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB839EC81DBB199B00DB0B16 /* OldLocationViewController.m in Sources */,
+				EB839EC91DBB199B00DB0B16 /* CreateSeedViewController.m in Sources */,
+				EB839ECA1DBB199B00DB0B16 /* AppDelegate.m in Sources */,
+				EB839ECB1DBB199B00DB0B16 /* SeedTableViewCell.m in Sources */,
+				EB839ECC1DBB199B00DB0B16 /* main.m in Sources */,
+				EB839ECD1DBB199B00DB0B16 /* CircleMapViewController.m in Sources */,
+				EB839ECE1DBB199B00DB0B16 /* EditNameTableViewController.m in Sources */,
+				EB839ECF1DBB199B00DB0B16 /* ReportTableViewController.m in Sources */,
+				EB839ED01DBB199B00DB0B16 /* SeedsTableViewController.m in Sources */,
+				EB839ED11DBB199B00DB0B16 /* EditUsernameTableViewController.m in Sources */,
+				EB839ED21DBB199B00DB0B16 /* SeedWebViewController.m in Sources */,
+				EB839ED31DBB199B00DB0B16 /* LocationController.m in Sources */,
+				EB839ED41DBB199B00DB0B16 /* SettingsTableViewController.m in Sources */,
+				EB839ED51DBB199B00DB0B16 /* IntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +760,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S67B2C3XJ7;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEVELOPMENT=0",
+				);
 				INFOPLIST_FILE = seed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mesh8.seed;
@@ -619,6 +777,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S67B2C3XJ7;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEVELOPMENT=0",
+				);
 				INFOPLIST_FILE = seed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mesh8.seed;
@@ -672,6 +834,40 @@
 			};
 			name = Release;
 		};
+		EB839EE71DBB199B00DB0B16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3C39E751893AADCD7715AD4 /* Pods-seed dev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S67B2C3XJ7;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEVELOPMENT=1",
+				);
+				INFOPLIST_FILE = "seed dev-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mesh8.seed-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EB839EE81DBB199B00DB0B16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28985EF84360B7E83352C9A9 /* Pods-seed dev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S67B2C3XJ7;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEVELOPMENT=1",
+				);
+				INFOPLIST_FILE = "seed dev-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mesh8.seed-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -707,6 +903,15 @@
 			buildConfigurations = (
 				EB16A9AD1D58240600E96404 /* Debug */,
 				EB16A9AE1D58240600E96404 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB839EE61DBB199B00DB0B16 /* Build configuration list for PBXNativeTarget "seed dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB839EE71DBB199B00DB0B16 /* Debug */,
+				EB839EE81DBB199B00DB0B16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

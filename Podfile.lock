@@ -19,12 +19,14 @@ PODS:
   - EARestrictedScrollView (1.1.0)
   - Flurry-iOS-SDK/FlurrySDK (7.8.0)
   - MBProgressHUD (1.0.0)
+  - YHRoundBorderedButton (0.1.0)
 
 DEPENDENCIES:
   - AFNetworking
   - EAIntroView (~> 2.9.0)
   - Flurry-iOS-SDK/FlurrySDK
   - MBProgressHUD (~> 1.0.0)
+  - YHRoundBorderedButton
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -32,7 +34,8 @@ SPEC CHECKSUMS:
   EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
   Flurry-iOS-SDK: 388df247b9d92659527b608c891c7e474cd9d00e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  YHRoundBorderedButton: 2180f04094db264cace8db88eae977d78a3b4633
 
-PODFILE CHECKSUM: efdc1bc01b7da1f07992247bab038cd72ded803e
+PODFILE CHECKSUM: 69e78975f46bb56fbf0fbff09c98a89b54557f09
 
 COCOAPODS: 1.0.1

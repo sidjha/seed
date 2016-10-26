@@ -69,7 +69,12 @@
     NSNumber *lat = [NSNumber numberWithDouble:self.locationController.location.coordinate.latitude];
     NSNumber *lng = [NSNumber numberWithDouble:self.locationController.location.coordinate.longitude];
 
-    NSString *URLString = [NSString stringWithFormat:@"https://seedalpha88.herokuapp.com/seed/create"];
+#if DEVELOPMENT
+#define CREATE_SEED_ENDPOINT @"http://0.0.0.0:5000/seed/create"
+#else
+#define CREATE_SEED_ENDPOINT @"https://seedalpha88.herokuapp.com/seed/create"
+#endif
+    NSString *URLString = [NSString stringWithFormat:CREATE_SEED_ENDPOINT];
 
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 

@@ -35,8 +35,12 @@
         self.window.rootViewController = viewController;
     }
 
-    //z[Flurry setDebugLogEnabled:NO];
-    [Flurry startSession:@"J75YBQWSMGNP3V58SJVQ"];
+#if DEVELOPMENT
+#define FLURRY_API_TOKEN @"J75YBQWSMGNP3V58SJVQ"
+#else
+#define FLURRY_API_TOKEN @"S4THBZ8CSSK67Y9BZNT6"
+#endif
+    [Flurry startSession:FLURRY_API_TOKEN];
 
     // Get vendor ID and store it locally
     [[NSUserDefaults standardUserDefaults] setObject:[self getVendorID] forKey:@"vendorIDStr"];

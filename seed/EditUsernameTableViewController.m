@@ -43,8 +43,12 @@
 
 
 - (void) postUsernameToServer:(NSString *)username {
-
-    NSString *URLString = [NSString stringWithFormat:@"https://seedalpha88.herokuapp.com/user/update"];
+#if DEVELOPMENT
+#define UPDATE_USER_ENDPOINT @"http://0.0.0.0:5000/user/update"
+#else
+#define UPDATE_USER_ENDPOINT @"https://seedalpha88.herokuapp.com/user/update"
+#endif
+    NSString *URLString = [NSString stringWithFormat:UPDATE_USER_ENDPOINT];
 
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingMutableContainers];
