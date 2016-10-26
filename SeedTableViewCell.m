@@ -54,7 +54,7 @@
 
     NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
 
-    data[@"seed_id"] = self.seedID;
+    data[@"seed_id"] = [NSNumber numberWithInt:self.seedID];
     data[@"vendor_id_str"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"vendorIDStr"];
     if (self.hasbeenUpvoted) {
         data[@"upvote_sign"] = @"up";

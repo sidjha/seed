@@ -16,8 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *linkLabel;
 @property (weak, nonatomic) IBOutlet YHRoundBorderedButton *upvoteButton;
-@property (assign, nonatomic) NSInteger *upvoteCount;
-@property (strong, nonatomic) id seedID;
+@property (nonatomic) int upvoteCount;
+@property (nonatomic) int seedID;
 
 @property (assign, nonatomic) BOOL hasbeenUpvoted;
 

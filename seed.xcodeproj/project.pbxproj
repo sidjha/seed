@@ -20,6 +20,8 @@
 		EB16A98C1D58240600E96404 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB16A98A1D58240600E96404 /* LaunchScreen.storyboard */; };
 		EB16A9971D58240600E96404 /* seedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9961D58240600E96404 /* seedTests.m */; };
 		EB16A9A21D58240600E96404 /* seedUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9A11D58240600E96404 /* seedUITests.m */; };
+		EB3E8DEE1DC074C700E02735 /* SeedsTableViewModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3E8DED1DC074C700E02735 /* SeedsTableViewModelObject.m */; };
+		EB3E8DEF1DC074C700E02735 /* SeedsTableViewModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3E8DED1DC074C700E02735 /* SeedsTableViewModelObject.m */; };
 		EB3EEB2E1D87974E007C7EE3 /* SeedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3EEB2D1D87974E007C7EE3 /* SeedsTableViewController.m */; };
 		EB3EEB311D87B70C007C7EE3 /* SeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3EEB301D87B70C007C7EE3 /* SeedTableViewCell.m */; };
 		EB6FF83B1DA8258B00CC315B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF83A1DA8258B00CC315B /* SettingsTableViewController.m */; };
@@ -106,6 +108,8 @@
 		EB16A99D1D58240600E96404 /* seedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB16A9A11D58240600E96404 /* seedUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = seedUITests.m; sourceTree = "<group>"; };
 		EB16A9A31D58240600E96404 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB3E8DEC1DC074C700E02735 /* SeedsTableViewModelObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedsTableViewModelObject.h; sourceTree = "<group>"; };
+		EB3E8DED1DC074C700E02735 /* SeedsTableViewModelObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedsTableViewModelObject.m; sourceTree = "<group>"; };
 		EB3EEB2C1D87974E007C7EE3 /* SeedsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedsTableViewController.h; sourceTree = "<group>"; };
 		EB3EEB2D1D87974E007C7EE3 /* SeedsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeedsTableViewController.m; sourceTree = "<group>"; };
 		EB3EEB2F1D87B70C007C7EE3 /* SeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeedTableViewCell.h; path = ../SeedTableViewCell.h; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				EB6FF83D1DA82ABA00CC315B /* EditUsernameTableViewController.m */,
 				EB6FF83F1DA82B3C00CC315B /* EditNameTableViewController.h */,
 				EB6FF8401DA82B3C00CC315B /* EditNameTableViewController.m */,
+				EB3E8DEC1DC074C700E02735 /* SeedsTableViewModelObject.h */,
+				EB3E8DED1DC074C700E02735 /* SeedsTableViewModelObject.m */,
 				EB16A9881D58240600E96404 /* Assets.xcassets */,
 				EBADA8241DB5CD21007057B9 /* Resources */,
 				EB16A98A1D58240600E96404 /* LaunchScreen.storyboard */,
@@ -580,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB16A9841D58240600E96404 /* OldLocationViewController.m in Sources */,
+				EB3E8DEE1DC074C700E02735 /* SeedsTableViewModelObject.m in Sources */,
 				EB968CD71D952B0A00B8E454 /* CreateSeedViewController.m in Sources */,
 				EB16A9811D58240600E96404 /* AppDelegate.m in Sources */,
 				EB3EEB311D87B70C007C7EE3 /* SeedTableViewCell.m in Sources */,
@@ -617,6 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB839EC81DBB199B00DB0B16 /* OldLocationViewController.m in Sources */,
+				EB3E8DEF1DC074C700E02735 /* SeedsTableViewModelObject.m in Sources */,
 				EB839EC91DBB199B00DB0B16 /* CreateSeedViewController.m in Sources */,
 				EB839ECA1DBB199B00DB0B16 /* AppDelegate.m in Sources */,
 				EB839ECB1DBB199B00DB0B16 /* SeedTableViewCell.m in Sources */,

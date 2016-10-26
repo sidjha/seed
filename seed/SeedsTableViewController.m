@@ -16,6 +16,7 @@
 #import "EAIntroView.h"
 #import "CircleMapViewController.h"
 #import "ReportTableViewController.h"
+#import "SeedsTableViewModelObject.h"
 
 @interface SeedsTableViewController ()
 
@@ -135,7 +136,14 @@
 
         //NSLog(@"Response: %@", responseObject);
 
-        self.seeds = [responseObject objectForKey:@"seeds"];
+        // Populate array of Seed model objects
+        self.seeds = [[NSMutableArray alloc] init];
+        for(NSInteger i = 0; i < [[responseObject objectForKey:@"seeds"] count]; i++) {
+            NSMutableDictionary *objectDict = [[responseObject objectForKey:@"seeds"] objectAtIndex:i];
+            SeedsTableViewModelObject *aSeed = [[SeedsTableViewModelObject alloc] initWithJSON:objectDict];
+            [self.seeds addObject:aSeed];
+        }
+
         [self.tableView reloadData];
 
 
@@ -185,26 +193,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"seedCell" forIndexPath:indexPath];
 
-    cell.seedID = [self.seeds objectAtIndex:indexPath.row][@"id"];
+    SeedsTableViewModelObject *seed = (SeedsTableViewModelObject *)[self.seeds objectAtIndex:indexPath.row];
 
-    cell.seederLabel.text = [self.seeds objectAtIndex:indexPath.row][@"username"];
+    cell.seedID = seed.seedID;
 
-    NSString *rawTimestamp = [self.seeds objectAtIndex:indexPath.row][@"timestamp"];
+    cell.seederLabel.text = seed.username;
 
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    cell.timestampLabel.text = [self relativeDateStringForDate:seed.timestamp];
 
-    [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];
-    NSDate *date = [dateFormatter dateFromString:rawTimestamp];
+    cell.captionLabel.text = seed.title;
+    cell.linkLabel.text = seed.link;
 
-    //[dateFormatter setDateFormat:@"MMM d h:mm a"];
-    //NSString *timestamp = [dateFormatter stringFromDate:date];
-
-    cell.timestampLabel.text = [self relativeDateStringForDate:date];
-
-    cell.captionLabel.text = [self.seeds objectAtIndex:indexPath.row][@"title"];
-    cell.linkLabel.text = [self.seeds objectAtIndex:indexPath.row][@"link"];
-
-    cell.upvoteCount = [[self.seeds objectAtIndex:indexPath.row][@"upvotes"] intValue];
+    cell.upvoteCount = seed.upvotes;
 
     cell.preservesSuperviewLayoutMargins = false;
     cell.separatorInset = UIEdgeInsetsZero;
@@ -227,8 +227,8 @@
         UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
 
         UIAlertAction *actionReport = [UIAlertAction actionWithTitle:@"Report this Seed" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-
-            [self reportSeed:[self.seeds objectAtIndex:indexPath.row][@"id"]];
+            SeedsTableViewModelObject *seed = (SeedsTableViewModelObject *)[self.seeds objectAtIndex:indexPath.row];
+            [self reportSeed:seed.seedID];
         }];
 
         UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
@@ -243,7 +243,7 @@
 
 }
 
-- (void) reportSeed:(id)seedID {
+- (void) reportSeed:(int)seedID {
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
@@ -269,17 +269,36 @@
                                                                     options:0];
 
     if (components.year > 0) {
-        return [NSString stringWithFormat:@"%ld years ago", (long)components.year];
+
+        if (components.year > 1) {
+            return [NSString stringWithFormat:@"%ld years ago", (long)components.year];
+        } else {
+            return [NSString stringWithFormat:@"%ld year ago", (long)components.year];
+        }
+
     } else if (components.month > 0) {
-        return [NSString stringWithFormat:@"%ld months ago", (long)components.month];
+
+        if (components.month > 1) {
+            return [NSString stringWithFormat:@"%ld months ago", (long)components.month];
+        } else {
+            return [NSString stringWithFormat:@"%ld month ago", (long)components.month];
+        }
+
     } else if (components.weekOfYear > 0) {
-        return [NSString stringWithFormat:@"%ld weeks ago", (long)components.weekOfYear];
+
+        if (components.weekOfYear > 1) {
+            return [NSString stringWithFormat:@"%ld weeks ago", (long)components.weekOfYear];
+        } else {
+            return [NSString stringWithFormat:@"%ld week ago", (long)components.weekOfYear];
+        }
+
     } else if (components.day > 0) {
         if (components.day > 1) {
             return [NSString stringWithFormat:@"%ld days ago", (long)components.day];
         } else {
             return @"Yesterday";
         }
+
     } else {
         return @"Today";
     }
@@ -338,7 +357,8 @@
 
         SeedWebViewController *webViewController = (SeedWebViewController *) segue.destinationViewController;
 
-        webViewController.urlToLoad = [NSURL URLWithString:[self.seeds objectAtIndex:indexPath.row][@"link"]];
+        SeedsTableViewModelObject *seed = (SeedsTableViewModelObject *) [self.seeds objectAtIndex:indexPath.row];
+        webViewController.urlToLoad = [NSURL URLWithString:seed.link];
     }
 }
 

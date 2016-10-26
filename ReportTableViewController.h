@@ -10,6 +10,6 @@
 
 @interface ReportTableViewController : UITableViewController
 
-@property (strong, nonatomic) id seedID;
+@property (nonatomic) int seedID;
 
 @end
