@@ -307,6 +307,10 @@
     }
 }
 
+- (void) createSeedViewController:(CreateSeedViewController *)controller didFinishPublishingSeed:(SeedsTableViewModelObject *)seed {
+    [self getNearbyContent];
+}
+
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -362,9 +366,11 @@
 
         SeedsTableViewModelObject *seed = (SeedsTableViewModelObject *) [self.seeds objectAtIndex:indexPath.row];
         webViewController.urlToLoad = [NSURL URLWithString:seed.link];
+    } else if ([segue.identifier isEqualToString:@"createSeedSegue"]) {
+        CreateSeedViewController *createSeedVC = (CreateSeedViewController *) segue.destinationViewController;
+        createSeedVC.delegate = self;
     }
 }
 
-- (IBAction)upvoteButtonTapped:(id)sender {
-}
+
 @end

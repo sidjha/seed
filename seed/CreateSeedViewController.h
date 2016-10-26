@@ -7,6 +7,15 @@
 //
 
 #import "LocationController.h"
+#import "SeedsTableViewModelObject.h"
+
+@class CreateSeedViewController;
+
+@protocol CreateSeedViewControllerDelegate <NSObject>
+
+- (void) createSeedViewController:(CreateSeedViewController *)controller didFinishPublishingSeed:(SeedsTableViewModelObject *)seed;
+
+@end
 
 @interface CreateSeedViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
 
@@ -20,5 +29,7 @@
 
 - (IBAction)publishSeedTapped:(id)sender;
 - (IBAction)closeButtonTapped:(id)sender;
+
+@property (weak, nonatomic) id <CreateSeedViewControllerDelegate> delegate;
 
 @end

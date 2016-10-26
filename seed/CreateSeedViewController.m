@@ -10,6 +10,7 @@
 #import "AFHTTPSessionManager.h"
 #import "AFURLRequestSerialization.h"
 #import "MBProgressHUD.h"
+#import "SeedsTableViewModelObject.h"
 
 @interface CreateSeedViewController ()
 
@@ -105,6 +106,9 @@
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
 
+            SeedsTableViewModelObject *newlyCreatedSeed = (SeedsTableViewModelObject *)responseObject;
+
+            [self.delegate createSeedViewController:self didFinishPublishingSeed:newlyCreatedSeed];
             [self dismissViewControllerAnimated:YES completion:nil];
 
         } failure:^(NSURLSessionTask *operation, NSError *error) {

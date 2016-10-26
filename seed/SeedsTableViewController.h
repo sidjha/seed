@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "LocationController.h"
 #import "EAIntroView.h"
+#import "CreateSeedViewController.h"
 
-@interface SeedsTableViewController : UITableViewController <LocationControllerDelegate, EAIntroDelegate, UIGestureRecognizerDelegate>
+@interface SeedsTableViewController : UITableViewController <LocationControllerDelegate, EAIntroDelegate, UIGestureRecognizerDelegate, CreateSeedViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *seeds;
 @property (nonatomic, strong) UITableView *seedsTableView;
