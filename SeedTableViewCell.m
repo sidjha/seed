@@ -43,7 +43,7 @@
 - (void) sendUpvoteToServer {
 
 #if DEVELOPMENT
-#define UPVOTE_SEED_ENDPOINT @"http://0.0.0.0:5000/seed/upvote"
+#define UPVOTE_SEED_ENDPOINT @"http://d7eeedc9.ngrok.io/seed/upvote"
 #else
 #define UPVOTE_SEED_ENDPOINT @"https://seedalpha88.herokuapp.com/seed/upvote"
 #endif

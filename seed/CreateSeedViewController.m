@@ -71,7 +71,7 @@
     NSNumber *lng = [NSNumber numberWithDouble:self.locationController.location.coordinate.longitude];
 
 #if DEVELOPMENT
-#define CREATE_SEED_ENDPOINT @"http://0.0.0.0:5000/seed/create"
+#define CREATE_SEED_ENDPOINT @"http://d7eeedc9.ngrok.io/seed/create"
 #else
 #define CREATE_SEED_ENDPOINT @"https://seedalpha88.herokuapp.com/seed/create"
 #endif

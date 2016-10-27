@@ -44,7 +44,7 @@
 
 - (void) postUsernameToServer:(NSString *)username {
 #if DEVELOPMENT
-#define UPDATE_USER_ENDPOINT @"http://0.0.0.0:5000/user/update"
+#define UPDATE_USER_ENDPOINT @"http://d7eeedc9.ngrok.io/user/update"
 #else
 #define UPDATE_USER_ENDPOINT @"https://seedalpha88.herokuapp.com/user/update"
 #endif

@@ -49,7 +49,7 @@
 
 - (void) sendReportToServer:(NSString *)reason {
 #if DEVELOPMENT
-#define REPORT_SEED_ENDPOINT @"http://0.0.0.0:5000/seed/report"
+#define REPORT_SEED_ENDPOINT @"http://d7eeedc9.ngrok.io/seed/report"
 #else
 #define REPORT_SEED_ENDPOINT @"https://seedalpha88.herokuapp.com/seed/report"
 #endif

@@ -28,8 +28,6 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Seed needs permission to access your location so that you can discover nearby content.</string>

@@ -123,7 +123,7 @@
     NSString *lng = [[NSNumber numberWithDouble:self.locationController.location.coordinate.longitude] stringValue];
 
 #if DEVELOPMENT
-#define NEARBY_SEEDS_ENDPOINT @"http://0.0.0.0:5000/seeds"
+#define NEARBY_SEEDS_ENDPOINT @"http://d7eeedc9.ngrok.io/seeds"
 #else
 #define NEARBY_SEEDS_ENDPOINT @"https://seedalpha88.herokuapp.com/seeds"
 #endif
