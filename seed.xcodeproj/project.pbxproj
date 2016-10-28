@@ -59,6 +59,8 @@
 		EB839EE11DBB199B00DB0B16 /* SourceSerifPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8311DB5CD6B007057B9 /* SourceSerifPro-Semibold.ttf */; };
 		EB839EE21DBB199B00DB0B16 /* SourceSerifPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8321DB5CD6B007057B9 /* SourceSerifPro-Regular.ttf */; };
 		EB839EE31DBB199B00DB0B16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB16A9851D58240600E96404 /* Main.storyboard */; };
+		EB8EFD2F1DC2E54C000357B4 /* SeedsTableViewModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3E8DED1DC074C700E02735 /* SeedsTableViewModelObject.m */; };
+		EB8EFD301DC2E54D000357B4 /* SeedsTableViewModelObject.m in Sources */ = {isa = PBXBuildFile; fileRef = EB3E8DED1DC074C700E02735 /* SeedsTableViewModelObject.m */; };
 		EB968CD41D8D62EF00B8E454 /* SeedWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD31D8D62EF00B8E454 /* SeedWebViewController.m */; };
 		EB968CD71D952B0A00B8E454 /* CreateSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */; };
 		EBA32E011D96598A00C1677A /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA32E001D96598A00C1677A /* LocationController.m */; };
@@ -547,6 +549,7 @@
 				EBB3BDA11DC2CCCF005114AF /* Resources */,
 				31B00B468DB4C67CC9CE47F3 /* [CP] Embed Pods Frameworks */,
 				8A027CEE073BE36A38F89893 /* [CP] Copy Pods Resources */,
+				EB8EFD311DC2E895000357B4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -872,6 +875,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-seed dev/Pods-seed dev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EB8EFD311DC2E895000357B4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi";
+		};
 		F101C17EB08B0FEA65EFCFD6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -933,6 +949,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB3BD9D1DC2A535005114AF /* LocationController.m in Sources */,
+				EB8EFD301DC2E54D000357B4 /* SeedsTableViewModelObject.m in Sources */,
 				EB7FF72B1DC28F2F00AAE600 /* ShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -964,6 +981,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBB3BDBA1DC2D373005114AF /* LocationController.m in Sources */,
+				EB8EFD2F1DC2E54C000357B4 /* SeedsTableViewModelObject.m in Sources */,
 				EBB3BDA71DC2CCCF005114AF /* ShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

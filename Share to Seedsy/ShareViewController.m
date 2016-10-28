@@ -64,6 +64,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+
+    self.view.transform = CGAffineTransformMakeTranslation(0, self.view.frame.size.height);
+    [UIView animateWithDuration:0.25 animations:^
+     {
+         self.view.transform = CGAffineTransformIdentity;
+     }];
+
     [self.seedTitleTextView becomeFirstResponder];
 }
 
@@ -98,7 +105,18 @@
 }
 
 - (IBAction)closeButtonTapped:(id)sender {
-    [self.extensionContext cancelRequestWithError:nil];
+    [self close];
+}
+
+- (void) close {
+    [UIView animateWithDuration:0.20 animations:^
+     {
+         self.view.transform = CGAffineTransformMakeTranslation(0, self.view.frame.size.height);
+     }
+                     completion:^(BOOL finished)
+     {
+         [self.extensionContext completeRequestReturningItems:nil completionHandler:nil];
+     }];
 }
 
 - (NSArray *)configurationItems {
@@ -151,9 +169,9 @@
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
 
-           // SeedsTableViewModelObject *newlyCreatedSeed = (SeedsTableViewModelObject *)responseObject;
+            //SeedsTableViewModelObject *newlyCreatedSeed = (SeedsTableViewModelObject *)responseObject;
 
-            [self.extensionContext completeRequestReturningItems:nil completionHandler:nil];
+            [self close];
         } failure:^(NSURLSessionTask *operation, NSError *error) {
             NSString* errResponse = [[NSString alloc] initWithData:(NSData *)error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
             NSLog(@"Error Response: %@", errResponse);
