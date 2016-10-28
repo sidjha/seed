@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A8CF609EEE02A4BE98ADD74 /* libPods-Share to Seedsy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E19240736B5FA23FA6125343 /* libPods-Share to Seedsy.a */; };
+		2A911C6BD08F95B2523C4B66 /* libPods-seedsy-share-ext.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 741ADAE6422CAC1217957E7B /* libPods-seedsy-share-ext.a */; };
 		5B37E398F3CFDD9384DAE7C4 /* libPods-seed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */; };
 		6388CD2EE9C2080D9ED85BA0 /* libPods-seed dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4A9B1A0DB35521B86AA3F0 /* libPods-seed dev.a */; };
 		EB06C79B1DBAC82100E39047 /* ReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB06C79A1DBAC82100E39047 /* ReportTableViewController.m */; };
@@ -27,6 +29,10 @@
 		EB6FF83B1DA8258B00CC315B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF83A1DA8258B00CC315B /* SettingsTableViewController.m */; };
 		EB6FF83E1DA82ABA00CC315B /* EditUsernameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF83D1DA82ABA00CC315B /* EditUsernameTableViewController.m */; };
 		EB6FF8411DA82B3C00CC315B /* EditNameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6FF8401DA82B3C00CC315B /* EditNameTableViewController.m */; };
+		EB7FF72B1DC28F2F00AAE600 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7FF72A1DC28F2F00AAE600 /* ShareViewController.m */; };
+		EB7FF72E1DC28F2F00AAE600 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB7FF72C1DC28F2F00AAE600 /* MainInterface.storyboard */; };
+		EB7FF7321DC28F2F00AAE600 /* seedsy-share-ext.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EB7FF7271DC28F2F00AAE600 /* seedsy-share-ext.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EB7FF7381DC293BB00AAE600 /* SeedsyShareExt.js in Resources */ = {isa = PBXBuildFile; fileRef = EB7FF7371DC293BB00AAE600 /* SeedsyShareExt.js */; };
 		EB839EC81DBB199B00DB0B16 /* OldLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9831D58240600E96404 /* OldLocationViewController.m */; };
 		EB839EC91DBB199B00DB0B16 /* CreateSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB968CD61D952B0A00B8E454 /* CreateSeedViewController.m */; };
 		EB839ECA1DBB199B00DB0B16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB16A9801D58240600E96404 /* AppDelegate.m */; };
@@ -63,6 +69,12 @@
 		EBADA83B1DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8351DB5CD6B007057B9 /* SourceSerifPro-Bold.ttf */; };
 		EBADA83C1DB5CD6B007057B9 /* SourceSerifPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBADA8361DB5CD6B007057B9 /* SourceSerifPro-Black.ttf */; };
 		EBADA83F1DB5D7D9007057B9 /* CircleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBADA83E1DB5D7D9007057B9 /* CircleMapViewController.m */; };
+		EBB3BD9D1DC2A535005114AF /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA32E001D96598A00C1677A /* LocationController.m */; };
+		EBB3BDA71DC2CCCF005114AF /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB3BDA61DC2CCCF005114AF /* ShareViewController.m */; };
+		EBB3BDAE1DC2CCCF005114AF /* Share to Seedsy.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EBB3BDA31DC2CCCF005114AF /* Share to Seedsy.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EBB3BDB51DC2CEF4005114AF /* SeedsySharePreprocessor.js in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BDB41DC2CEF4005114AF /* SeedsySharePreprocessor.js */; };
+		EBB3BDB91DC2CF71005114AF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBB3BDB81DC2CF71005114AF /* MainInterface.storyboard */; };
+		EBB3BDBA1DC2D373005114AF /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA32E001D96598A00C1677A /* LocationController.m */; };
 		EBD82BEB1DA6FCC6008CD705 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -81,13 +93,56 @@
 			remoteGlobalIDString = EB16A9781D58240600E96404;
 			remoteInfo = seed;
 		};
+		EB7FF7301DC28F2F00AAE600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB16A9711D58240600E96404 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB7FF7261DC28F2F00AAE600;
+			remoteInfo = "seedsy-share-ext";
+		};
+		EBB3BDAC1DC2CCCF005114AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB16A9711D58240600E96404 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBB3BDA21DC2CCCF005114AF;
+			remoteInfo = "Share to Seedsy";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB7FF7361DC28F2F00AAE600 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EB7FF7321DC28F2F00AAE600 /* seedsy-share-ext.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBB3BDB21DC2CCCF005114AF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EBB3BDAE1DC2CCCF005114AF /* Share to Seedsy.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		28985EF84360B7E83352C9A9 /* Pods-seed dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-seed dev/Pods-seed dev.release.xcconfig"; sourceTree = "<group>"; };
 		36A057159C0DFCFD08CD79BD /* Pods-seed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seed/Pods-seed.debug.xcconfig"; sourceTree = "<group>"; };
 		3C4A9B1A0DB35521B86AA3F0 /* libPods-seed dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seed dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		741ADAE6422CAC1217957E7B /* libPods-seedsy-share-ext.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seedsy-share-ext.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8730798A19A70C674F8EDEB7 /* Pods-seedsy-share-ext.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seedsy-share-ext.release.xcconfig"; path = "Pods/Target Support Files/Pods-seedsy-share-ext/Pods-seedsy-share-ext.release.xcconfig"; sourceTree = "<group>"; };
+		AEAAAD89CD802304EE622941 /* Pods-Share to Seedsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share to Seedsy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Share to Seedsy/Pods-Share to Seedsy.debug.xcconfig"; sourceTree = "<group>"; };
 		C396ED0C8BF752ED373FC639 /* Pods-seed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed.release.xcconfig"; path = "Pods/Target Support Files/Pods-seed/Pods-seed.release.xcconfig"; sourceTree = "<group>"; };
+		E19240736B5FA23FA6125343 /* libPods-Share to Seedsy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Share to Seedsy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB06C7991DBAC82100E39047 /* ReportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportTableViewController.h; path = ../ReportTableViewController.h; sourceTree = "<group>"; };
 		EB06C79A1DBAC82100E39047 /* ReportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportTableViewController.m; path = ../ReportTableViewController.m; sourceTree = "<group>"; };
 		EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -120,6 +175,14 @@
 		EB6FF83D1DA82ABA00CC315B /* EditUsernameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUsernameTableViewController.m; sourceTree = "<group>"; };
 		EB6FF83F1DA82B3C00CC315B /* EditNameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditNameTableViewController.h; sourceTree = "<group>"; };
 		EB6FF8401DA82B3C00CC315B /* EditNameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditNameTableViewController.m; sourceTree = "<group>"; };
+		EB7FF7271DC28F2F00AAE600 /* seedsy-share-ext.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "seedsy-share-ext.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB7FF7291DC28F2F00AAE600 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		EB7FF72A1DC28F2F00AAE600 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		EB7FF72D1DC28F2F00AAE600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		EB7FF72F1DC28F2F00AAE600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB7FF7371DC293BB00AAE600 /* SeedsyShareExt.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SeedsyShareExt.js; sourceTree = "<group>"; };
+		EB7FF7391DC297C900AAE600 /* seedsy-share-ext.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "seedsy-share-ext.entitlements"; sourceTree = "<group>"; };
+		EB7FF73A1DC297D000AAE600 /* seed dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "seed dev.entitlements"; sourceTree = SOURCE_ROOT; };
 		EB839EE91DBB199B00DB0B16 /* seed dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "seed dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB839EEA1DBB199C00DB0B16 /* seed dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "seed dev-Info.plist"; path = "/Users/sidjha/Dropbox/sandbox/seed/seed/seed dev-Info.plist"; sourceTree = "<absolute>"; };
 		EB968CD21D8D62EF00B8E454 /* SeedWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedWebViewController.h; sourceTree = "<group>"; };
@@ -136,10 +199,20 @@
 		EBADA8361DB5CD6B007057B9 /* SourceSerifPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceSerifPro-Black.ttf"; path = "../SourceSerifPro-Black.ttf"; sourceTree = "<group>"; };
 		EBADA83D1DB5D7D9007057B9 /* CircleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircleMapViewController.h; path = ../CircleMapViewController.h; sourceTree = "<group>"; };
 		EBADA83E1DB5D7D9007057B9 /* CircleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircleMapViewController.m; path = ../CircleMapViewController.m; sourceTree = "<group>"; };
+		EBB3BD9E1DC2BEB0005114AF /* seed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = seed.entitlements; sourceTree = "<group>"; };
+		EBB3BDA31DC2CCCF005114AF /* Share to Seedsy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Share to Seedsy.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBB3BDA51DC2CCCF005114AF /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		EBB3BDA61DC2CCCF005114AF /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		EBB3BDAB1DC2CCCF005114AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBB3BDB31DC2CCF1005114AF /* Share to Seedsy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Share to Seedsy.entitlements"; sourceTree = "<group>"; };
+		EBB3BDB41DC2CEF4005114AF /* SeedsySharePreprocessor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SeedsySharePreprocessor.js; sourceTree = "<group>"; };
+		EBB3BDB81DC2CF71005114AF /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		EBD82BE91DA6FCC6008CD705 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = ../IntroViewController.h; sourceTree = "<group>"; };
 		EBD82BEA1DA6FCC6008CD705 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = ../IntroViewController.m; sourceTree = "<group>"; };
 		F3C39E751893AADCD7715AD4 /* Pods-seed dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seed dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seed dev/Pods-seed dev.debug.xcconfig"; sourceTree = "<group>"; };
 		F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-seed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6B43857DE1C46722399E1BC /* Pods-seedsy-share-ext.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-seedsy-share-ext.debug.xcconfig"; path = "Pods/Target Support Files/Pods-seedsy-share-ext/Pods-seedsy-share-ext.debug.xcconfig"; sourceTree = "<group>"; };
+		FD537C287254D4D079410C71 /* Pods-Share to Seedsy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Share to Seedsy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Share to Seedsy/Pods-Share to Seedsy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +240,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB7FF7241DC28F2F00AAE600 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A911C6BD08F95B2523C4B66 /* libPods-seedsy-share-ext.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB839ED61DBB199B00DB0B16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +256,14 @@
 				EB839ED81DBB199B00DB0B16 /* MapKit.framework in Frameworks */,
 				EB839ED91DBB199B00DB0B16 /* libPods-seed.a in Frameworks */,
 				6388CD2EE9C2080D9ED85BA0 /* libPods-seed dev.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBB3BDA01DC2CCCF005114AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A8CF609EEE02A4BE98ADD74 /* libPods-Share to Seedsy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +277,8 @@
 				EB102DFA1D72A0BD003E7BAF /* CoreLocation.framework */,
 				F4FB0A728B2EC5AD3273CF96 /* libPods-seed.a */,
 				3C4A9B1A0DB35521B86AA3F0 /* libPods-seed dev.a */,
+				741ADAE6422CAC1217957E7B /* libPods-seedsy-share-ext.a */,
+				E19240736B5FA23FA6125343 /* libPods-Share to Seedsy.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,6 +290,10 @@
 				C396ED0C8BF752ED373FC639 /* Pods-seed.release.xcconfig */,
 				F3C39E751893AADCD7715AD4 /* Pods-seed dev.debug.xcconfig */,
 				28985EF84360B7E83352C9A9 /* Pods-seed dev.release.xcconfig */,
+				F6B43857DE1C46722399E1BC /* Pods-seedsy-share-ext.debug.xcconfig */,
+				8730798A19A70C674F8EDEB7 /* Pods-seedsy-share-ext.release.xcconfig */,
+				AEAAAD89CD802304EE622941 /* Pods-Share to Seedsy.debug.xcconfig */,
+				FD537C287254D4D079410C71 /* Pods-Share to Seedsy.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -209,6 +304,8 @@
 				EB16A97B1D58240600E96404 /* seed */,
 				EB16A9951D58240600E96404 /* seedTests */,
 				EB16A9A01D58240600E96404 /* seedUITests */,
+				EB7FF7281DC28F2F00AAE600 /* seedsy-share-ext */,
+				EBB3BDA41DC2CCCF005114AF /* Share to Seedsy */,
 				EB16A97A1D58240600E96404 /* Products */,
 				4ACF635A008CA1C79E9B1761 /* Pods */,
 				1C2E5800467EA0A927490279 /* Frameworks */,
@@ -222,6 +319,8 @@
 				EB16A9921D58240600E96404 /* seedTests.xctest */,
 				EB16A99D1D58240600E96404 /* seedUITests.xctest */,
 				EB839EE91DBB199B00DB0B16 /* seed dev.app */,
+				EB7FF7271DC28F2F00AAE600 /* seedsy-share-ext.appex */,
+				EBB3BDA31DC2CCCF005114AF /* Share to Seedsy.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,6 +362,8 @@
 				EB16A98A1D58240600E96404 /* LaunchScreen.storyboard */,
 				EB16A98D1D58240600E96404 /* Info.plist */,
 				EB839EEA1DBB199C00DB0B16 /* seed dev-Info.plist */,
+				EBB3BD9E1DC2BEB0005114AF /* seed.entitlements */,
+				EB7FF73A1DC297D000AAE600 /* seed dev.entitlements */,
 				EB16A97C1D58240600E96404 /* Supporting Files */,
 			);
 			path = seed;
@@ -294,6 +395,19 @@
 			path = seedUITests;
 			sourceTree = "<group>";
 		};
+		EB7FF7281DC28F2F00AAE600 /* seedsy-share-ext */ = {
+			isa = PBXGroup;
+			children = (
+				EB7FF7391DC297C900AAE600 /* seedsy-share-ext.entitlements */,
+				EB7FF7291DC28F2F00AAE600 /* ShareViewController.h */,
+				EB7FF72A1DC28F2F00AAE600 /* ShareViewController.m */,
+				EB7FF72C1DC28F2F00AAE600 /* MainInterface.storyboard */,
+				EB7FF7371DC293BB00AAE600 /* SeedsyShareExt.js */,
+				EB7FF72F1DC28F2F00AAE600 /* Info.plist */,
+			);
+			path = "seedsy-share-ext";
+			sourceTree = "<group>";
+		};
 		EBADA8241DB5CD21007057B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +419,19 @@
 				EBADA8361DB5CD6B007057B9 /* SourceSerifPro-Black.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EBB3BDA41DC2CCCF005114AF /* Share to Seedsy */ = {
+			isa = PBXGroup;
+			children = (
+				EBB3BDB81DC2CF71005114AF /* MainInterface.storyboard */,
+				EBB3BDB31DC2CCF1005114AF /* Share to Seedsy.entitlements */,
+				EBB3BDA51DC2CCCF005114AF /* ShareViewController.h */,
+				EBB3BDA61DC2CCCF005114AF /* ShareViewController.m */,
+				EBB3BDB41DC2CEF4005114AF /* SeedsySharePreprocessor.js */,
+				EBB3BDAB1DC2CCCF005114AF /* Info.plist */,
+			);
+			path = "Share to Seedsy";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,10 +447,12 @@
 				EB16A9771D58240600E96404 /* Resources */,
 				F101C17EB08B0FEA65EFCFD6 /* [CP] Embed Pods Frameworks */,
 				C35FC0580C2D7A6D108B42B8 /* [CP] Copy Pods Resources */,
+				EBB3BDB21DC2CCCF005114AF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EBB3BDAD1DC2CCCF005114AF /* PBXTargetDependency */,
 			);
 			name = seed;
 			productName = seed;
@@ -366,6 +495,26 @@
 			productReference = EB16A99D1D58240600E96404 /* seedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EB7FF7261DC28F2F00AAE600 /* seedsy-share-ext */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB7FF7351DC28F2F00AAE600 /* Build configuration list for PBXNativeTarget "seedsy-share-ext" */;
+			buildPhases = (
+				30FCD9E9A837B330D494601F /* [CP] Check Pods Manifest.lock */,
+				EB7FF7231DC28F2F00AAE600 /* Sources */,
+				EB7FF7241DC28F2F00AAE600 /* Frameworks */,
+				EB7FF7251DC28F2F00AAE600 /* Resources */,
+				83967F5A75B1A0994F8A6737 /* [CP] Embed Pods Frameworks */,
+				69DFF68D53C198EF535192F4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "seedsy-share-ext";
+			productName = "seedsy-share-ext";
+			productReference = EB7FF7271DC28F2F00AAE600 /* seedsy-share-ext.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		EB839EC51DBB199B00DB0B16 /* seed dev */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB839EE61DBB199B00DB0B16 /* Build configuration list for PBXNativeTarget "seed dev" */;
@@ -376,15 +525,37 @@
 				EB839EDA1DBB199B00DB0B16 /* Resources */,
 				EB839EE41DBB199B00DB0B16 /* [CP] Embed Pods Frameworks */,
 				EB839EE51DBB199B00DB0B16 /* [CP] Copy Pods Resources */,
+				EB7FF7361DC28F2F00AAE600 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EB7FF7311DC28F2F00AAE600 /* PBXTargetDependency */,
 			);
 			name = "seed dev";
 			productName = seed;
 			productReference = EB839EE91DBB199B00DB0B16 /* seed dev.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EBB3BDA21DC2CCCF005114AF /* Share to Seedsy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBB3BDAF1DC2CCCF005114AF /* Build configuration list for PBXNativeTarget "Share to Seedsy" */;
+			buildPhases = (
+				A17ACC5945DE1FC048A05FB7 /* [CP] Check Pods Manifest.lock */,
+				EBB3BD9F1DC2CCCF005114AF /* Sources */,
+				EBB3BDA01DC2CCCF005114AF /* Frameworks */,
+				EBB3BDA11DC2CCCF005114AF /* Resources */,
+				31B00B468DB4C67CC9CE47F3 /* [CP] Embed Pods Frameworks */,
+				8A027CEE073BE36A38F89893 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Share to Seedsy";
+			productName = "Share to Seedsy";
+			productReference = EBB3BDA31DC2CCCF005114AF /* Share to Seedsy.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -399,6 +570,9 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = S67B2C3XJ7;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -412,8 +586,33 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = EB16A9781D58240600E96404;
 					};
+					EB7FF7261DC28F2F00AAE600 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = S67B2C3XJ7;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					EB839EC51DBB199B00DB0B16 = {
 						DevelopmentTeam = S67B2C3XJ7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					EBB3BDA21DC2CCCF005114AF = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = S67B2C3XJ7;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -431,7 +630,9 @@
 			projectRoot = "";
 			targets = (
 				EB16A9781D58240600E96404 /* seed */,
+				EBB3BDA21DC2CCCF005114AF /* Share to Seedsy */,
 				EB839EC51DBB199B00DB0B16 /* seed dev */,
+				EB7FF7261DC28F2F00AAE600 /* seedsy-share-ext */,
 				EB16A9911D58240600E96404 /* seedTests */,
 				EB16A99C1D58240600E96404 /* seedUITests */,
 			);
@@ -469,6 +670,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB7FF7251DC28F2F00AAE600 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB7FF72E1DC28F2F00AAE600 /* MainInterface.storyboard in Resources */,
+				EB7FF7381DC293BB00AAE600 /* SeedsyShareExt.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB839EDA1DBB199B00DB0B16 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,10 +695,109 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBB3BDA11DC2CCCF005114AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB3BDB51DC2CEF4005114AF /* SeedsySharePreprocessor.js in Resources */,
+				EBB3BDB91DC2CF71005114AF /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		30FCD9E9A837B330D494601F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		31B00B468DB4C67CC9CE47F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share to Seedsy/Pods-Share to Seedsy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69DFF68D53C198EF535192F4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-seedsy-share-ext/Pods-seedsy-share-ext-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83967F5A75B1A0994F8A6737 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-seedsy-share-ext/Pods-seedsy-share-ext-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		867183458B6180B754BB0987 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A027CEE073BE36A38F89893 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Share to Seedsy/Pods-Share to Seedsy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A17ACC5945DE1FC048A05FB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -619,6 +928,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB7FF7231DC28F2F00AAE600 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB3BD9D1DC2A535005114AF /* LocationController.m in Sources */,
+				EB7FF72B1DC28F2F00AAE600 /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB839EC71DBB199B00DB0B16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -641,6 +959,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBB3BD9F1DC2CCCF005114AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBB3BDBA1DC2D373005114AF /* LocationController.m in Sources */,
+				EBB3BDA71DC2CCCF005114AF /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -653,6 +980,16 @@
 			isa = PBXTargetDependency;
 			target = EB16A9781D58240600E96404 /* seed */;
 			targetProxy = EB16A99E1D58240600E96404 /* PBXContainerItemProxy */;
+		};
+		EB7FF7311DC28F2F00AAE600 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB7FF7261DC28F2F00AAE600 /* seedsy-share-ext */;
+			targetProxy = EB7FF7301DC28F2F00AAE600 /* PBXContainerItemProxy */;
+		};
+		EBB3BDAD1DC2CCCF005114AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBB3BDA21DC2CCCF005114AF /* Share to Seedsy */;
+			targetProxy = EBB3BDAC1DC2CCCF005114AF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -671,6 +1008,14 @@
 				EB16A98B1D58240600E96404 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EB7FF72C1DC28F2F00AAE600 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB7FF72D1DC28F2F00AAE600 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -767,6 +1112,7 @@
 			baseConfigurationReference = 36A057159C0DFCFD08CD79BD /* Pods-seed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = seed/seed.entitlements;
 				DEVELOPMENT_TEAM = S67B2C3XJ7;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -784,6 +1130,7 @@
 			baseConfigurationReference = C396ED0C8BF752ED373FC639 /* Pods-seed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = seed/seed.entitlements;
 				DEVELOPMENT_TEAM = S67B2C3XJ7;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -842,11 +1189,54 @@
 			};
 			name = Release;
 		};
+		EB7FF7331DC28F2F00AAE600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6B43857DE1C46722399E1BC /* Pods-seedsy-share-ext.debug.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = "seedsy-share-ext/seedsy-share-ext.entitlements";
+				DEVELOPMENT_TEAM = S67B2C3XJ7;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEVELOPMENT=1",
+				);
+				INFOPLIST_FILE = "seedsy-share-ext/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mesh8.seed-dev.seedsy-share-ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EB7FF7341DC28F2F00AAE600 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8730798A19A70C674F8EDEB7 /* Pods-seedsy-share-ext.release.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = "seedsy-share-ext/seedsy-share-ext.entitlements";
+				DEVELOPMENT_TEAM = S67B2C3XJ7;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEVELOPMENT=1",
+				);
+				INFOPLIST_FILE = "seedsy-share-ext/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mesh8.seed-dev.seedsy-share-ext";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		EB839EE71DBB199B00DB0B16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3C39E751893AADCD7715AD4 /* Pods-seed dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "seed dev.entitlements";
 				DEVELOPMENT_TEAM = S67B2C3XJ7;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -864,6 +1254,7 @@
 			baseConfigurationReference = 28985EF84360B7E83352C9A9 /* Pods-seed dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "seed dev.entitlements";
 				DEVELOPMENT_TEAM = S67B2C3XJ7;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -873,6 +1264,48 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mesh8.seed-dev";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EBB3BDB01DC2CCCF005114AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEAAAD89CD802304EE622941 /* Pods-Share to Seedsy.debug.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Share to Seedsy/Share to Seedsy.entitlements";
+				DEVELOPMENT_TEAM = S67B2C3XJ7;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEVELOPMENT=0",
+				);
+				INFOPLIST_FILE = "Share to Seedsy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mesh8.seed.Share-to-Seedsy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EBB3BDB11DC2CCCF005114AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD537C287254D4D079410C71 /* Pods-Share to Seedsy.release.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Share to Seedsy/Share to Seedsy.entitlements";
+				DEVELOPMENT_TEAM = S67B2C3XJ7;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEVELOPMENT=0",
+				);
+				INFOPLIST_FILE = "Share to Seedsy/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mesh8.seed.Share-to-Seedsy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -915,11 +1348,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EB7FF7351DC28F2F00AAE600 /* Build configuration list for PBXNativeTarget "seedsy-share-ext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB7FF7331DC28F2F00AAE600 /* Debug */,
+				EB7FF7341DC28F2F00AAE600 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EB839EE61DBB199B00DB0B16 /* Build configuration list for PBXNativeTarget "seed dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EB839EE71DBB199B00DB0B16 /* Debug */,
 				EB839EE81DBB199B00DB0B16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBB3BDAF1DC2CCCF005114AF /* Build configuration list for PBXNativeTarget "Share to Seedsy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBB3BDB01DC2CCCF005114AF /* Debug */,
+				EBB3BDB11DC2CCCF005114AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k0f-nk-6oz">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSerifPro-Bold.ttf">
+            <string>SourceSerifPro-Bold</string>
+        </array>
+        <array key="SourceSerifPro-Regular.ttf">
+            <string>SourceSerifPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Share View Controller-->
+        <scene sceneID="TYb-oW-z4H">
+            <objects>
+                <viewController id="k0f-nk-6oz" customClass="ShareViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="67h-RU-GVd"/>
+                        <viewControllerLayoutGuide type="bottom" id="bqt-a6-06I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ScC-Qo-F4c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zYq-Lp-TiR">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ots-Sw-CYi">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqM-2t-o1E">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="PUBLISH">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="publishSeedTapped:" destination="k0f-nk-6oz" eventType="touchUpInside" id="7Fw-lA-2Z6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5V-uB-m8z">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="k0f-nk-6oz" eventType="touchUpInside" id="Ptm-gP-Efh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a title for your seed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7T6-cO-jMl">
+                                <fontDescription key="fontDescription" name="SourceSerifPro-Bold" family="Source Serif Pro" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paste in the link you'd like to share" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW2-q7-sy9">
+                                <fontDescription key="fontDescription" name="SourceSerifPro-Regular" family="Source Serif Pro" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Post as e.g. anon456" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gqv-Be-NTM">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="twitter" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="T5V-uB-m8z" secondAttribute="leading" id="0SR-6t-LbY"/>
+                            <constraint firstItem="7T6-cO-jMl" firstAttribute="leading" secondItem="ScC-Qo-F4c" secondAttribute="leadingMargin" constant="25" id="5HL-zo-Qjz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gqv-Be-NTM" secondAttribute="trailing" constant="40" id="9HA-NY-E7Y"/>
+                            <constraint firstItem="gqv-Be-NTM" firstAttribute="top" secondItem="zYq-Lp-TiR" secondAttribute="bottom" constant="20" id="EKO-Qj-oOf"/>
+                            <constraint firstItem="KqM-2t-o1E" firstAttribute="top" secondItem="67h-RU-GVd" secondAttribute="bottom" constant="10" id="IJx-8e-6ZQ"/>
+                            <constraint firstItem="KqM-2t-o1E" firstAttribute="baseline" secondItem="T5V-uB-m8z" secondAttribute="baseline" id="J42-2S-NR8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7T6-cO-jMl" secondAttribute="trailing" constant="40" id="KeQ-K5-krD"/>
+                            <constraint firstItem="ots-Sw-CYi" firstAttribute="leading" secondItem="ScC-Qo-F4c" secondAttribute="leadingMargin" constant="20" id="MdY-66-psu"/>
+                            <constraint firstItem="zYq-Lp-TiR" firstAttribute="top" secondItem="ots-Sw-CYi" secondAttribute="bottom" constant="20" id="WbP-AE-1bQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zYq-Lp-TiR" secondAttribute="trailing" constant="40" id="XjQ-2B-GpB"/>
+                            <constraint firstItem="T5V-uB-m8z" firstAttribute="top" secondItem="67h-RU-GVd" secondAttribute="bottom" constant="10" id="YoV-pl-efY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ots-Sw-CYi" secondAttribute="trailing" constant="40" id="ZkV-Bd-qeW"/>
+                            <constraint firstItem="7T6-cO-jMl" firstAttribute="top" secondItem="67h-RU-GVd" secondAttribute="bottom" constant="77" id="ali-Ps-Uyr"/>
+                            <constraint firstItem="DW2-q7-sy9" firstAttribute="leading" secondItem="ScC-Qo-F4c" secondAttribute="leadingMargin" constant="25" id="dGh-bd-jb2"/>
+                            <constraint firstItem="ots-Sw-CYi" firstAttribute="top" secondItem="67h-RU-GVd" secondAttribute="bottom" constant="70" id="fkY-lQ-cyJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DW2-q7-sy9" secondAttribute="trailing" constant="40" id="gFa-VP-Sxd"/>
+                            <constraint firstItem="zYq-Lp-TiR" firstAttribute="leading" secondItem="ScC-Qo-F4c" secondAttribute="leadingMargin" constant="20" id="gHA-10-cwE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KqM-2t-o1E" secondAttribute="trailing" id="kbM-Hl-HKW"/>
+                            <constraint firstItem="DW2-q7-sy9" firstAttribute="top" secondItem="ots-Sw-CYi" secondAttribute="bottom" constant="27" id="oXS-wR-vWc"/>
+                            <constraint firstItem="gqv-Be-NTM" firstAttribute="leading" secondItem="ScC-Qo-F4c" secondAttribute="leadingMargin" constant="25" id="wMk-oC-pbt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="T5V-uB-m8z" id="6Tm-fn-RIb"/>
+                        <outlet property="linkPlaceholderLabel" destination="DW2-q7-sy9" id="4Lx-iu-5uK"/>
+                        <outlet property="seedLinkTextView" destination="zYq-Lp-TiR" id="sf3-xz-cgY"/>
+                        <outlet property="seedTitleTextView" destination="ots-Sw-CYi" id="CBg-7n-sCD"/>
+                        <outlet property="titlePlaceholderLabel" destination="7T6-cO-jMl" id="wd6-xd-lUW"/>
+                        <outlet property="usernameField" destination="gqv-Be-NTM" id="4M7-fH-J1r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGe-Xi-s7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="130"/>
+        </scene>
+    </scenes>
+</document>

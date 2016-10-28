@@ -4,15 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Share to Seedsy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
 		<key>seed dev.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>14</integer>
 		</dict>
 		<key>seed.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>seedsy-share-ext.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -32,7 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>EB7FF7261DC28F2F00AAE600</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EB839EC51DBB199B00DB0B16</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBB3BDA21DC2CCCF005114AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
