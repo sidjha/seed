@@ -91,7 +91,7 @@
         data[@"lng"] = lng;
         data[@"vendor_id_str"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"vendorIDStr"];
 
-        if (self.usernameField.text != nil) {
+        if (self.usernameField.text != nil && ![self.usernameField.text isEqualToString:@""]) {
             data[@"username"] = self.usernameField.text;
         } else {
             // TODO: generate random usernames
