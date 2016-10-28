@@ -302,11 +302,11 @@
 			isa = PBXGroup;
 			children = (
 				EB16A97B1D58240600E96404 /* seed */,
-				EB16A9951D58240600E96404 /* seedTests */,
-				EB16A9A01D58240600E96404 /* seedUITests */,
 				EB7FF7281DC28F2F00AAE600 /* seedsy-share-ext */,
 				EBB3BDA41DC2CCCF005114AF /* Share to Seedsy */,
 				EB16A97A1D58240600E96404 /* Products */,
+				EB16A9A01D58240600E96404 /* seedUITests */,
+				EB16A9951D58240600E96404 /* seedTests */,
 				4ACF635A008CA1C79E9B1761 /* Pods */,
 				1C2E5800467EA0A927490279 /* Frameworks */,
 			);
